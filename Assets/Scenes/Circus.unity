@@ -1027,13 +1027,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf97517d115e58b41a3eb2192455d8ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  movementSpeed: 10
   rotationSpeed: 700
   jumpForce: 2000
+  ragdoll: {fileID: 0}
   score: 0
   currentScore: 0
   scoreSpeed: 0.1
-  velocityEpsilon: 1.16
   scoreDisplay: {fileID: 283430660}
   mass: 50
 --- !u!4 &667763113 stripped
@@ -1624,13 +1624,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf97517d115e58b41a3eb2192455d8ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  movementSpeed: 10
   rotationSpeed: 100
   jumpForce: 600
+  ragdoll: {fileID: 0}
   score: 0
   currentScore: 0
   scoreSpeed: 0.1
-  velocityEpsilon: 0.01
   scoreDisplay: {fileID: 0}
   mass: 50
 --- !u!1001 &1024295943
@@ -1709,7 +1709,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameDuration: 60
   pause: 0
-  player: {fileID: 667763108}
+  player: {fileID: 1534122840}
   gameUI: {fileID: 875830222}
   stopUI: {fileID: 1457008489}
   scoreDisplay: {fileID: 1254436502}
@@ -2120,6 +2120,21 @@ Prefab:
       propertyPath: m_CollisionDetection
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114896790620615878, guid: ec500e8ac7645c349b7aec08b7aa5e81,
+        type: 2}
+      propertyPath: rotationSpeed
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 114896790620615878, guid: ec500e8ac7645c349b7aec08b7aa5e81,
+        type: 2}
+      propertyPath: scoreDisplay
+      value: 
+      objectReference: {fileID: 283430660}
+    - target: {fileID: 114188037810342684, guid: ec500e8ac7645c349b7aec08b7aa5e81,
+        type: 2}
+      propertyPath: head
+      value: 
+      objectReference: {fileID: 1305867348}
     m_RemovedComponents:
     - {fileID: 114967942549825976, guid: ec500e8ac7645c349b7aec08b7aa5e81, type: 2}
     - {fileID: 114790816536529890, guid: ec500e8ac7645c349b7aec08b7aa5e81, type: 2}
@@ -2301,6 +2316,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1305867348 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114780689054591234, guid: ec500e8ac7645c349b7aec08b7aa5e81,
+    type: 2}
+  m_PrefabInternal: {fileID: 1251865013}
+  m_Script: {fileID: 11500000, guid: 1aec89ff4da48a54889fa2c36e229ce4, type: 3}
 --- !u!1 &1442821813
 GameObject:
   m_ObjectHideFlags: 0
@@ -2543,6 +2564,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 383651173b0885b4cbbaccaa745f6a43, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1534122840 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1718272800772754, guid: ec500e8ac7645c349b7aec08b7aa5e81,
+    type: 2}
+  m_PrefabInternal: {fileID: 1251865013}
 --- !u!1001 &1549296800
 Prefab:
   m_ObjectHideFlags: 0

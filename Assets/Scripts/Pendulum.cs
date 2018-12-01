@@ -10,7 +10,7 @@ public class Pendulum : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        t = 0.0f;
+        t = Random.Range(-10.0f, 10.0f);
     }
 	
 	// Update is called once per frame

@@ -36,7 +36,8 @@ public class GameSystem : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if(gameDuration < 0 && !pause)
+       
+        if((gameDuration < 0 || !player.GetComponent<Ragdoll2D>().IsAlive()) && !pause)
         {
             pause = true;
             gameUI.SetActive(false);

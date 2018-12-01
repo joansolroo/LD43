@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Ragdoll2D : MonoBehaviour {
 
+
+    public Ragdoll2DPart head;
     public Ragdoll2DPart center;
     public  List<Ragdoll2DPart> parts = new List<Ragdoll2DPart>();
 
@@ -17,14 +19,6 @@ public class Ragdoll2D : MonoBehaviour {
         //TODO: handle hits
     }
 
-    public bool IsColliding()
-    {
-        foreach(Ragdoll2DPart part in parts)
-        {
-            if (part.IsColliding()) return true;
-        }
-        return false;
-    }
 
     public void AddLimb(Ragdoll2DPart part) {
         parts.Add(part);
@@ -32,6 +26,10 @@ public class Ragdoll2D : MonoBehaviour {
     public void RemoveLimb(Ragdoll2DPart part)
     {
         parts.Remove(part);
+        if (part == head)
+        {
+            //over
+        }
     }
 
     public Ragdoll2DPart[] GetCollisions()
@@ -67,6 +65,19 @@ public class Ragdoll2D : MonoBehaviour {
         return Mathf.Abs(center.RB2D.velocity.y) > velocityEpsilon;
     }
 
+
+    public bool IsColliding()
+    {
+        foreach (Ragdoll2DPart part in parts)
+        {
+            if (part.IsColliding()) return true;
+        }
+        return false;
+    }
+    public bool IsAlive()
+    {
+        return head.attached;
+    }
     public void AddForceCenter(Vector2 force)
     {
             center.RB2D.AddForce(force * Mass);

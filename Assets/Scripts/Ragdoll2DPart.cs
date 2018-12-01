@@ -8,6 +8,8 @@ public class Ragdoll2DPart : MonoBehaviour {
     public Rigidbody2D RB2D;
     HashSet<Transform> hits = new HashSet<Transform>();
 
+    public bool attached = true;
+
     [SerializeField] float health = 100;
     [SerializeField] float armor = 30;
     private void Start()
@@ -60,7 +62,9 @@ public class Ragdoll2DPart : MonoBehaviour {
                 if (joint != null)
                 {
                     joint.enabled = false;
+                    attached = false;
                 }
+                
             }
         }
     }
