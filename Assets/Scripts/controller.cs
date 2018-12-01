@@ -44,7 +44,7 @@ public class controller : MonoBehaviour
         //rb.AddForce();
 
         float y = Input.GetAxis("Vertical");
-        if (y != 0)
+        if (y > 0)
         {
             ragdoll.Grab();
         }

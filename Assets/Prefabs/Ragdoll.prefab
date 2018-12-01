@@ -1632,6 +1632,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ragdoll: {fileID: 0}
   RB2D: {fileID: 0}
+  attached: 1
+  sticky: 0
   health: 100
   armor: 30
 --- !u!114 &114088695477107718
@@ -1647,6 +1649,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ragdoll: {fileID: 0}
   RB2D: {fileID: 0}
+  attached: 1
+  sticky: 0
   health: 100
   armor: 30
 --- !u!114 &114105001553571230
@@ -1662,6 +1666,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ragdoll: {fileID: 0}
   RB2D: {fileID: 0}
+  attached: 1
+  sticky: 0
   health: 100
   armor: 30
 --- !u!114 &114109515063763752
@@ -1677,6 +1683,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ragdoll: {fileID: 0}
   RB2D: {fileID: 0}
+  attached: 1
+  sticky: 0
   health: 1
   armor: 20
 --- !u!114 &114113720246793766
@@ -1692,6 +1700,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ragdoll: {fileID: 0}
   RB2D: {fileID: 0}
+  attached: 1
+  sticky: 0
   health: 100
   armor: 30
 --- !u!114 &114122305022271616
@@ -1707,6 +1717,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ragdoll: {fileID: 0}
   RB2D: {fileID: 0}
+  attached: 1
+  sticky: 0
   health: 100
   armor: 30
 --- !u!114 &114188037810342684
@@ -1720,8 +1732,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7e05f7605fe99542bc33b6f2d28c598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  head: {fileID: 114780689054591234}
   center: {fileID: 114984510788559268}
   parts: []
+  hands:
+  - {fileID: 114778800010519188}
+  - {fileID: 114751162232600348}
 --- !u!114 &114191929077478620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1735,6 +1751,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ragdoll: {fileID: 0}
   RB2D: {fileID: 0}
+  attached: 1
+  sticky: 0
   health: 100
   armor: 30
 --- !u!114 &114349730947277360
@@ -1750,6 +1768,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ragdoll: {fileID: 0}
   RB2D: {fileID: 0}
+  attached: 1
+  sticky: 0
   health: 100
   armor: 30
 --- !u!114 &114358830625031612
@@ -1765,6 +1785,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ragdoll: {fileID: 0}
   RB2D: {fileID: 0}
+  attached: 1
+  sticky: 0
   health: 100
   armor: 30
 --- !u!114 &114415015693679804
@@ -1780,6 +1802,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ragdoll: {fileID: 0}
   RB2D: {fileID: 0}
+  attached: 1
+  sticky: 0
   health: 100
   armor: 30
 --- !u!114 &114468164319055186
@@ -1795,6 +1819,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ragdoll: {fileID: 0}
   RB2D: {fileID: 0}
+  attached: 1
+  sticky: 0
   health: 100
   armor: 30
 --- !u!114 &114483293384482308
@@ -1810,6 +1836,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ragdoll: {fileID: 0}
   RB2D: {fileID: 0}
+  attached: 1
+  sticky: 0
   health: 100
   armor: 30
 --- !u!114 &114704052227235850
@@ -1825,6 +1853,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ragdoll: {fileID: 0}
   RB2D: {fileID: 0}
+  attached: 1
+  sticky: 0
   health: 100
   armor: 30
 --- !u!114 &114751162232600348
@@ -1840,6 +1870,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ragdoll: {fileID: 0}
   RB2D: {fileID: 0}
+  attached: 1
+  sticky: 0
   health: 100
   armor: 30
 --- !u!114 &114778800010519188
@@ -1855,6 +1887,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ragdoll: {fileID: 0}
   RB2D: {fileID: 0}
+  attached: 1
+  sticky: 0
   health: 100
   armor: 30
 --- !u!114 &114780689054591234
@@ -1870,6 +1904,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ragdoll: {fileID: 0}
   RB2D: {fileID: 0}
+  attached: 1
+  sticky: 0
   health: 100
   armor: 50
 --- !u!114 &114896790620615878
@@ -1883,8 +1919,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf97517d115e58b41a3eb2192455d8ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 300
-  rotationSpeed: 100
+  movementSpeed: 500
+  rotationSpeed: 400
   jumpForce: 3000
   ragdoll: {fileID: 114188037810342684}
   score: 0
@@ -1905,6 +1941,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ragdoll: {fileID: 0}
   RB2D: {fileID: 0}
+  attached: 1
+  sticky: 0
   health: 100
   armor: 30
 --- !u!114 &114984510788559268
@@ -1920,6 +1958,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ragdoll: {fileID: 0}
   RB2D: {fileID: 0}
+  attached: 1
+  sticky: 0
   health: 100
   armor: 50
 --- !u!212 &212031076590852210

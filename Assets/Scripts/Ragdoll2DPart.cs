@@ -27,7 +27,7 @@ public class Ragdoll2DPart : MonoBehaviour
     {
         if (sticky)
         {
-            RB2D.AddForce(Vector3.up*1000);
+            RB2D.AddForce(Vector3.up*600);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
