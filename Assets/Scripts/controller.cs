@@ -43,12 +43,10 @@ public class controller : MonoBehaviour
         if (Input.GetButton("Fire2"))
         {
             rb.AddTorque(rotationSpeed);
-            //transform.parent.Rotate(0, 0,  rotationSpeed * Time.deltaTime);
         }
         if (Input.GetButton("Fire1"))
         {
             rb.AddTorque(-rotationSpeed);
-            //transform.parent.Rotate(0, 0, -rotationSpeed * Time.deltaTime);
         }
         
         if (previousGrounded && Mathf.Abs(rb.velocity.y) > velocityEpsilon)
