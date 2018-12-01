@@ -43,8 +43,9 @@ public class controller : MonoBehaviour
         translation *= Time.deltaTime;
         //rb.AddForce();
 
-        float y = Input.GetAxis("Vertical");
-        if (y > 0)
+        bool grab = Input.GetAxis("Vertical")>0;
+        bool down = Input.GetAxis("Vertical") < 0;
+        if (grab)
         {
             ragdoll.Grab();
         }
@@ -52,19 +53,21 @@ public class controller : MonoBehaviour
         {
             ragdoll.Release();
         }
+        ragdoll.down = down;
+
         if (Input.GetButtonDown("Jump"))
         {
-            ragdoll.AddForceHomogenous(new Vector2(0, jumpForce));
+            ragdoll.AddForceCenter(new Vector2(0, jumpForce));
         }
 
         if (translation < 0)
         {
-            ragdoll.AddForceHomogenous(new Vector2(translation, 0));
+            ragdoll.AddForceCenter(new Vector2(translation, 0));
             ragdoll.AddTorque(rotationSpeed);
         }
         else if (translation > 0)
         {
-            ragdoll.AddForceHomogenous(new Vector2(translation, 0));
+            ragdoll.AddForceCenter(new Vector2(translation, 0));
             ragdoll.AddTorque(-rotationSpeed);
         }
 

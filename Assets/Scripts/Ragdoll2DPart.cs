@@ -23,13 +23,7 @@ public class Ragdoll2DPart : MonoBehaviour
         stickPoint = gameObject.AddComponent<HingeJoint2D>();
         stickPoint.enabled = false;
     }
-    private void Update()
-    {
-        if (sticky)
-        {
-            RB2D.AddForce(Vector3.up*600);
-        }
-    }
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.parent != this.transform.parent)

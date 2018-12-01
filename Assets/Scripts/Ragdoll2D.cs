@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ragdoll2D : MonoBehaviour {
+public class Ragdoll2D : MonoBehaviour
+{
 
 
     public Ragdoll2DPart head;
     public Ragdoll2DPart center;
     public List<Ragdoll2DPart> parts = new List<Ragdoll2DPart>();
     public Ragdoll2DPart[] hands = new Ragdoll2DPart[2];
+    public Ragdoll2DPart[] feet = new Ragdoll2DPart[2];
 
     public void CollisionEnter(Ragdoll2DPart part, Collision2D collision)
     {
@@ -20,8 +22,40 @@ public class Ragdoll2D : MonoBehaviour {
         //TODO: handle hits
     }
 
+    bool grabbing = false;
+    public bool down = false;
+    private void Update()
+    {
+        float pushForce = 20 * Mass;
+        if (grabbing)
+        {
+            foreach (Ragdoll2DPart hand in hands)
+            {
+                if (hand.attached)
+                {
+                    hand.RB2D.AddForce(Vector3.up * pushForce);
+                }
+            }
+        }
+        if (down)
+        {
 
-    public void AddLimb(Ragdoll2DPart part) {
+            int c = 0;
+            foreach (Ragdoll2DPart foot in feet)
+            {
+
+                if (foot.attached)
+                {
+                    ++c;
+                    foot.RB2D.AddForce(Vector3.down * pushForce);
+                }
+            }
+            center.RB2D.AddForce(Vector3.up * pushForce * c * 1.82f);
+        }
+    }
+
+    public void AddLimb(Ragdoll2DPart part)
+    {
         parts.Add(part);
     }
     public void RemoveLimb(Ragdoll2DPart part)
@@ -80,29 +114,65 @@ public class Ragdoll2D : MonoBehaviour {
     }
     public void AddForceCenter(Vector2 force)
     {
-            center.RB2D.AddForce(force * Mass);
+        center.RB2D.AddForce(force * Mass);
     }
     public void AddForceHomogenous(Vector2 force)
     {
-        foreach (Ragdoll2DPart part in parts)
+        /*foreach (Ragdoll2DPart part in parts)
         {
             part.RB2D.AddForce(force);
+        }*/
+        foreach (Ragdoll2DPart hand in hands)
+        {
+            if (hand.attached)
+            {
+                hand.RB2D.AddForce(force);
+            }
         }
+
+        foreach (Ragdoll2DPart foot in feet)
+        {
+
+            if (foot.attached)
+            {
+                foot.RB2D.AddForce(force);
+            }
+        }
+
     }
+
     public void AddTorque(float torque)
     {
         center.RB2D.AddTorque(torque * Mass);
+        foreach (Ragdoll2DPart hand in hands)
+        {
+            if (hand.attached)
+            {
+                hand.RB2D.AddTorque(torque);
+            }
+        }
+
+        foreach (Ragdoll2DPart foot in feet)
+        {
+
+            if (foot.attached)
+            {
+                foot.RB2D.AddTorque(torque);
+            }
+        }
     }
 
     public void Grab()
     {
-        foreach(Ragdoll2DPart hand in hands)
+        grabbing = true;
+        foreach (Ragdoll2DPart hand in hands)
         {
             hand.SetSticky(true);
         }
     }
     public void Release()
     {
+        grabbing = false;
         foreach (Ragdoll2DPart hand in hands)
         {
             hand.SetSticky(false);
