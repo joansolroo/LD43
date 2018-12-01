@@ -7,7 +7,8 @@ public class Ragdoll2D : MonoBehaviour {
 
     public Ragdoll2DPart head;
     public Ragdoll2DPart center;
-    public  List<Ragdoll2DPart> parts = new List<Ragdoll2DPart>();
+    public List<Ragdoll2DPart> parts = new List<Ragdoll2DPart>();
+    public Ragdoll2DPart[] hands = new Ragdoll2DPart[2];
 
     public void CollisionEnter(Ragdoll2DPart part, Collision2D collision)
     {
@@ -65,7 +66,6 @@ public class Ragdoll2D : MonoBehaviour {
         return Mathf.Abs(center.RB2D.velocity.y) > velocityEpsilon;
     }
 
-
     public bool IsColliding()
     {
         foreach (Ragdoll2DPart part in parts)
@@ -92,5 +92,20 @@ public class Ragdoll2D : MonoBehaviour {
     public void AddTorque(float torque)
     {
         center.RB2D.AddTorque(torque * Mass);
+    }
+
+    public void Grab()
+    {
+        foreach(Ragdoll2DPart hand in hands)
+        {
+            hand.SetSticky(true);
+        }
+    }
+    public void Release()
+    {
+        foreach (Ragdoll2DPart hand in hands)
+        {
+            hand.SetSticky(false);
+        }
     }
 }

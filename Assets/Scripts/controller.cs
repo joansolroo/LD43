@@ -43,6 +43,15 @@ public class controller : MonoBehaviour
         translation *= Time.deltaTime;
         //rb.AddForce();
 
+        float y = Input.GetAxis("Vertical");
+        if (y != 0)
+        {
+            ragdoll.Grab();
+        }
+        else
+        {
+            ragdoll.Release();
+        }
         if (Input.GetButtonDown("Jump"))
         {
             ragdoll.AddForceHomogenous(new Vector2(0, jumpForce));
