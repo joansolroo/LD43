@@ -4,17 +4,8 @@ using UnityEngine;
 
 public class Ragdoll2D : MonoBehaviour {
 
-    public  Ragdoll2DPart[] parts;
-
-	// Use this for initialization
-	void Start () {
-        parts = new Ragdoll2DPart[this.transform.childCount];
-        for(int c = 0; c< transform.childCount; ++c)
-        {
-            parts[c] = transform.GetChild(c).GetComponent<Ragdoll2DPart>();
-        }
-	}
-	
+    public Ragdoll2DPart center;
+    public  List<Ragdoll2DPart> parts = new List<Ragdoll2DPart>();
 
     public void CollisionEnter(Ragdoll2DPart part, Collision2D collision)
     {
@@ -34,6 +25,15 @@ public class Ragdoll2D : MonoBehaviour {
         }
         return false;
     }
+
+    public void AddLimb(Ragdoll2DPart part) {
+        parts.Add(part);
+    }
+    public void RemoveLimb(Ragdoll2DPart part)
+    {
+        parts.Remove(part);
+    }
+
     public Ragdoll2DPart[] GetCollisions()
     {
         if (!IsColliding())
@@ -46,5 +46,40 @@ public class Ragdoll2D : MonoBehaviour {
             if (part.IsColliding()) hits.Add(part);
         }
         return hits.ToArray();
+    }
+
+    public float Mass
+    {
+        get
+        {
+            float v = 0;
+            foreach (Ragdoll2DPart part in parts)
+            {
+                v += part.RB2D.mass;
+            }
+            return v;
+        }
+    }
+
+    static float velocityEpsilon = 0.01f;
+    public bool isGrounded()
+    {
+        return Mathf.Abs(center.RB2D.velocity.y) > velocityEpsilon;
+    }
+
+    public void AddForceCenter(Vector2 force)
+    {
+            center.RB2D.AddForce(force * Mass);
+    }
+    public void AddForceHomogenous(Vector2 force)
+    {
+        foreach (Ragdoll2DPart part in parts)
+        {
+            part.RB2D.AddForce(force);
+        }
+    }
+    public void AddTorque(float torque)
+    {
+        center.RB2D.AddTorque(torque * Mass);
     }
 }

@@ -6,17 +6,16 @@ using UnityEngine.UI;
 
 public class controller : MonoBehaviour
 {
-    public float speed = 10.0f;
+    public float movementSpeed = 10.0f;
     public float rotationSpeed = 450.0f;
     public float jumpForce = 450.0f;
-    private Rigidbody2D rb;
+    [SerializeField] Ragdoll2D ragdoll;
 
     public float score;
     public float currentScore = 0.0f;
     public float scoreSpeed = 0.1f;
 
     private float prevVerticalPos;
-    public float velocityEpsilon = 0.01f;
 
     private bool previousGrounded = false;
     public Text scoreDisplay;
@@ -26,45 +25,56 @@ public class controller : MonoBehaviour
     void Start ()
     {
         score = 0.0f;
-        rb = GetComponent<Rigidbody2D>();
+        //rb = GetComponent<Rigidbody2D>();
         prevVerticalPos = transform.position.y;
     }
     
     void Update()
     {
+        ComputeInput();
+
+        ComputeScore();
+    }
+
+    void ComputeInput()
+    {
         //  Movement
-        float translation = Input.GetAxis("Horizontal") * speed;
+        float translation = Input.GetAxis("Horizontal") * movementSpeed;
         translation *= Time.deltaTime;
-        rb.AddForce(new Vector3(translation * 1000, 0, 0));
+        //rb.AddForce();
 
         if (Input.GetButtonDown("Jump"))
         {
-            rb.AddForce(new Vector3(0, mass*jumpForce, 0));
+            ragdoll.AddForceHomogenous(new Vector2(0, jumpForce));
         }
 
-        if (Input.GetButton("Fire2"))
+        if (translation < 0)
         {
-            rb.AddTorque(rotationSpeed);
+            ragdoll.AddForceHomogenous(new Vector2(translation, 0));
+            ragdoll.AddTorque(rotationSpeed);
         }
-        if (Input.GetButton("Fire1"))
+        else if (translation > 0)
         {
-            rb.AddTorque(-rotationSpeed);
+            ragdoll.AddForceHomogenous(new Vector2(translation, 0));
+            ragdoll.AddTorque(-rotationSpeed);
         }
-        
-        if (previousGrounded && Mathf.Abs(rb.velocity.y) > velocityEpsilon)
+
+        if (previousGrounded && ragdoll.isGrounded())
         {
             previousGrounded = false;
         }
+    }
 
-
-
+    // TODO move to a dedicated script
+    void ComputeScore()
+    {
         //  score
         //Debug.Log(transform.position.y - prevVerticalPos);
-        if(Mathf.Abs(rb.velocity.y) < velocityEpsilon && transform.position.y - prevVerticalPos < 0.0f)
+        if (!ragdoll.isGrounded() && ragdoll.transform.position.y - prevVerticalPos < 0.0f)
         {
-            if(!previousGrounded)
+            if (!previousGrounded)
             {
-                if(Mathf.Abs(transform.localRotation.z) < 0.3f)
+                if (Mathf.Abs(ragdoll.transform.localRotation.z) < 0.3f)
                 {
                     score += 2.0f * currentScore;
                     Debug.Log("combo !");
@@ -83,10 +93,10 @@ public class controller : MonoBehaviour
 
         if (!previousGrounded)
         {
-            currentScore += scoreSpeed * Mathf.Abs(rb.angularVelocity);
+            currentScore += scoreSpeed * Mathf.Abs(ragdoll.center.RB2D.angularVelocity);
         }
 
         // updating parameters
-        prevVerticalPos = transform.position.y;
+        prevVerticalPos = ragdoll.transform.position.y;
     }
 }

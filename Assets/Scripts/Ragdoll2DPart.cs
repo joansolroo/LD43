@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Ragdoll2DPart : MonoBehaviour {
 
-    Ragdoll2D ragdoll;
+    public Ragdoll2D ragdoll;
+    public Rigidbody2D RB2D;
     HashSet<Transform> hits = new HashSet<Transform>();
 
     [SerializeField] float health = 100;
@@ -12,31 +13,21 @@ public class Ragdoll2DPart : MonoBehaviour {
     private void Start()
     {
         ragdoll = transform.parent.gameObject.GetComponent<Ragdoll2D>();
+        RB2D = GetComponent<Rigidbody2D>();
+        ragdoll.AddLimb(this);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.transform.parent!=this.transform.parent)
         {
-            this.GetComponent<Rigidbody2D>().AddForce(collision.relativeVelocity);
+            RB2D.AddForce(collision.relativeVelocity);
 
             Debug.Log("hit:" + this.name+" to "+collision.gameObject.name);
             hits.Add(collision.transform);
             ragdoll.CollisionEnter(this, collision);
-            float dmg = collision.relativeVelocity.magnitude * 0.5f;
-            if (dmg > armor)
-            {
-                health -= dmg;
-                this.gameObject.GetComponent<SpriteRenderer>().color = Color.Lerp(Color.red, Color.white, health / 100f);
-                if (health <= 0)
-                {
-                    HingeJoint2D joint = GetComponent<HingeJoint2D>();
-                    if (joint != null)
-                    {
-                        joint.enabled = false;
 
-                    }
-                }
-            }
+            Damaged(collision.relativeVelocity);
+            
         }
     }
 
@@ -54,6 +45,24 @@ public class Ragdoll2DPart : MonoBehaviour {
     {
         return hits.Count == 0;
     }
-
+    
+    void Damaged(Vector2 relativeVelocity)
+    {
+        float dmg = relativeVelocity.magnitude * 0.5f;
+        if (dmg > armor)
+        {
+            health -= dmg;
+            this.gameObject.GetComponent<SpriteRenderer>().color = Color.Lerp(Color.red, Color.white, health / 100f);
+            if (health <= 0)
+            {
+                ragdoll.RemoveLimb(this);
+                HingeJoint2D joint = GetComponent<HingeJoint2D>();
+                if (joint != null)
+                {
+                    joint.enabled = false;
+                }
+            }
+        }
+    }
 }
 

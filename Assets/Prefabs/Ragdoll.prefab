@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 233518182987557474}
   - component: {fileID: 114751162232600348}
   m_Layer: 9
-  m_Name: left-frearm (2)
+  m_Name: right-hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,7 +83,6 @@ GameObject:
   - component: {fileID: 61199119415089792}
   - component: {fileID: 50524250014053968}
   - component: {fileID: 114984510788559268}
-  - component: {fileID: 114790816536529890}
   m_Layer: 9
   m_Name: torso
   m_TagString: Untagged
@@ -306,6 +305,7 @@ GameObject:
   - component: {fileID: 4611380037487062}
   - component: {fileID: 50343664699200036}
   - component: {fileID: 114188037810342684}
+  - component: {fileID: 114896790620615878}
   m_Layer: 9
   m_Name: Ragdoll
   m_TagString: Untagged
@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 233684022388607106}
   - component: {fileID: 114778800010519188}
   m_Layer: 9
-  m_Name: left-frearm (1)
+  m_Name: left-hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -594,7 +594,7 @@ Transform:
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 4611380037487062}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4502321193635676
 Transform:
@@ -658,8 +658,8 @@ Transform:
   m_LocalPosition: {x: -74.57862, y: -24.8, z: -0.034537725}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
-  - {fileID: 4709824872201774}
   - {fileID: 4493722984089510}
+  - {fileID: 4709824872201774}
   - {fileID: 4280812207281678}
   - {fileID: 4913805228241100}
   - {fileID: 4553990165422478}
@@ -720,7 +720,7 @@ Transform:
   - {fileID: 4502321193635676}
   - {fileID: 4156093208477516}
   m_Father: {fileID: 4611380037487062}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4743687504032346
 Transform:
@@ -792,7 +792,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!50 &50312762415621984
 Rigidbody2D:
@@ -812,7 +812,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!50 &50326564927571394
 Rigidbody2D:
@@ -832,7 +832,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!50 &50343664699200036
 Rigidbody2D:
@@ -872,7 +872,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!50 &50386506426776982
 Rigidbody2D:
@@ -892,7 +892,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!50 &50524250014053968
 Rigidbody2D:
@@ -912,7 +912,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!50 &50634585197509188
 Rigidbody2D:
@@ -932,7 +932,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!50 &50674189206950502
 Rigidbody2D:
@@ -952,7 +952,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!50 &50677896764013860
 Rigidbody2D:
@@ -972,7 +972,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!50 &50721661403604960
 Rigidbody2D:
@@ -992,7 +992,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!50 &50731059392345432
 Rigidbody2D:
@@ -1012,7 +1012,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!50 &50753383004883782
 Rigidbody2D:
@@ -1032,7 +1032,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!50 &50760109000379426
 Rigidbody2D:
@@ -1052,7 +1052,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!50 &50784599218273642
 Rigidbody2D:
@@ -1072,7 +1072,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!50 &50946665848429586
 Rigidbody2D:
@@ -1092,7 +1092,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!50 &50948667067417886
 Rigidbody2D:
@@ -1112,7 +1112,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!50 &50989408899671390
 Rigidbody2D:
@@ -1132,7 +1132,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!50 &50992303439915550
 Rigidbody2D:
@@ -1152,7 +1152,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &58014663409025026
 CircleCollider2D:
@@ -1630,6 +1630,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aec89ff4da48a54889fa2c36e229ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ragdoll: {fileID: 0}
+  RB2D: {fileID: 0}
   health: 100
   armor: 30
 --- !u!114 &114088695477107718
@@ -1643,6 +1645,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aec89ff4da48a54889fa2c36e229ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ragdoll: {fileID: 0}
+  RB2D: {fileID: 0}
   health: 100
   armor: 30
 --- !u!114 &114105001553571230
@@ -1656,6 +1660,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aec89ff4da48a54889fa2c36e229ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ragdoll: {fileID: 0}
+  RB2D: {fileID: 0}
   health: 100
   armor: 30
 --- !u!114 &114109515063763752
@@ -1669,6 +1675,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aec89ff4da48a54889fa2c36e229ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ragdoll: {fileID: 0}
+  RB2D: {fileID: 0}
   health: 1
   armor: 20
 --- !u!114 &114113720246793766
@@ -1682,6 +1690,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aec89ff4da48a54889fa2c36e229ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ragdoll: {fileID: 0}
+  RB2D: {fileID: 0}
   health: 100
   armor: 30
 --- !u!114 &114122305022271616
@@ -1695,6 +1705,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aec89ff4da48a54889fa2c36e229ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ragdoll: {fileID: 0}
+  RB2D: {fileID: 0}
   health: 100
   armor: 30
 --- !u!114 &114188037810342684
@@ -1708,6 +1720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7e05f7605fe99542bc33b6f2d28c598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  center: {fileID: 114984510788559268}
   parts: []
 --- !u!114 &114191929077478620
 MonoBehaviour:
@@ -1720,6 +1733,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aec89ff4da48a54889fa2c36e229ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ragdoll: {fileID: 0}
+  RB2D: {fileID: 0}
   health: 100
   armor: 30
 --- !u!114 &114349730947277360
@@ -1733,6 +1748,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aec89ff4da48a54889fa2c36e229ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ragdoll: {fileID: 0}
+  RB2D: {fileID: 0}
   health: 100
   armor: 30
 --- !u!114 &114358830625031612
@@ -1746,6 +1763,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aec89ff4da48a54889fa2c36e229ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ragdoll: {fileID: 0}
+  RB2D: {fileID: 0}
   health: 100
   armor: 30
 --- !u!114 &114415015693679804
@@ -1759,6 +1778,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aec89ff4da48a54889fa2c36e229ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ragdoll: {fileID: 0}
+  RB2D: {fileID: 0}
   health: 100
   armor: 30
 --- !u!114 &114468164319055186
@@ -1772,6 +1793,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aec89ff4da48a54889fa2c36e229ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ragdoll: {fileID: 0}
+  RB2D: {fileID: 0}
   health: 100
   armor: 30
 --- !u!114 &114483293384482308
@@ -1785,6 +1808,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aec89ff4da48a54889fa2c36e229ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ragdoll: {fileID: 0}
+  RB2D: {fileID: 0}
   health: 100
   armor: 30
 --- !u!114 &114704052227235850
@@ -1798,6 +1823,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aec89ff4da48a54889fa2c36e229ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ragdoll: {fileID: 0}
+  RB2D: {fileID: 0}
   health: 100
   armor: 30
 --- !u!114 &114751162232600348
@@ -1811,6 +1838,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aec89ff4da48a54889fa2c36e229ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ragdoll: {fileID: 0}
+  RB2D: {fileID: 0}
   health: 100
   armor: 30
 --- !u!114 &114778800010519188
@@ -1824,6 +1853,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aec89ff4da48a54889fa2c36e229ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ragdoll: {fileID: 0}
+  RB2D: {fileID: 0}
   health: 100
   armor: 30
 --- !u!114 &114780689054591234
@@ -1837,26 +1868,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aec89ff4da48a54889fa2c36e229ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ragdoll: {fileID: 0}
+  RB2D: {fileID: 0}
   health: 100
   armor: 50
---- !u!114 &114790816536529890
+--- !u!114 &114896790620615878
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1125090812267666}
+  m_GameObject: {fileID: 1718272800772754}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf97517d115e58b41a3eb2192455d8ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  rotationSpeed: 4000
+  movementSpeed: 300
+  rotationSpeed: 100
+  jumpForce: 3000
+  ragdoll: {fileID: 114188037810342684}
   score: 0
   currentScore: 0
   scoreSpeed: 0.1
-  velocityEpsilon: 1.16
   scoreDisplay: {fileID: 0}
+  mass: 50
 --- !u!114 &114917564520757178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1868,6 +1903,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aec89ff4da48a54889fa2c36e229ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ragdoll: {fileID: 0}
+  RB2D: {fileID: 0}
   health: 100
   armor: 30
 --- !u!114 &114984510788559268
@@ -1881,6 +1918,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1aec89ff4da48a54889fa2c36e229ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ragdoll: {fileID: 0}
+  RB2D: {fileID: 0}
   health: 100
   armor: 50
 --- !u!212 &212031076590852210
@@ -2903,13 +2942,13 @@ HingeJoint2D:
   m_GameObject: {fileID: 1170215841748372}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 50989408899671390}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
+  m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.002626419, y: 0.06627107}
-  m_ConnectedAnchor: {x: -0.04800016, y: -0.0605}
+  m_ConnectedAnchor: {x: 0.002625963, y: -0.06620078}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -2926,13 +2965,13 @@ HingeJoint2D:
   m_GameObject: {fileID: 1029263992407654}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 50946665848429586}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
+  m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.02685301, y: 0.045171354}
-  m_ConnectedAnchor: {x: -0.0071697235, y: -0.05942712}
+  m_ConnectedAnchor: {x: -0.015330821, y: -0.076986514}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -2949,13 +2988,13 @@ HingeJoint2D:
   m_GameObject: {fileID: 1376934092199702}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 50524250014053968}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
+  m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: -0.06}
-  m_ConnectedAnchor: {x: 0.046972834, y: 0.053000692}
+  m_ConnectedAnchor: {x: 0.06630401, y: 0.053000737}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -2972,13 +3011,13 @@ HingeJoint2D:
   m_GameObject: {fileID: 1131088210103314}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 50524250014053968}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
+  m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.002626419, y: 0.06627107}
-  m_ConnectedAnchor: {x: 0.0037393414, y: -0.06853499}
+  m_ConnectedAnchor: {x: 0.0036621094, y: -0.07529573}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -2995,13 +3034,13 @@ HingeJoint2D:
   m_GameObject: {fileID: 1505961789756856}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 50784599218273642}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
+  m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: -0.06}
-  m_ConnectedAnchor: {x: 0.0066664214, y: 0.05521558}
+  m_ConnectedAnchor: {x: 0.006666192, y: 0.07521574}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -3018,13 +3057,13 @@ HingeJoint2D:
   m_GameObject: {fileID: 1079150098841482}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 50753383004883782}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
+  m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.00034562094, y: 0.052237317}
-  m_ConnectedAnchor: {x: 0.0066663115, y: 0.057934448}
+  m_ConnectedAnchor: {x: 0.0063455994, y: 0.07037881}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -3041,13 +3080,13 @@ HingeJoint2D:
   m_GameObject: {fileID: 1945057126803776}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 50948667067417886}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
+  m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.002626419, y: 0.06627107}
-  m_ConnectedAnchor: {x: -0.04800016, y: -0.0605}
+  m_ConnectedAnchor: {x: 0.002626419, y: -0.06622789}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -3064,13 +3103,13 @@ HingeJoint2D:
   m_GameObject: {fileID: 1775273656485378}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 50362845397454710}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
+  m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.02685301, y: 0.045171354}
-  m_ConnectedAnchor: {x: -0.0071697235, y: -0.05942712}
+  m_ConnectedAnchor: {x: -0.007499695, y: -0.07723972}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -3087,13 +3126,13 @@ HingeJoint2D:
   m_GameObject: {fileID: 1571650378623832}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 50326564927571394}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
+  m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: -0.06}
-  m_ConnectedAnchor: {x: 0.0066664214, y: 0.05521558}
+  m_ConnectedAnchor: {x: 0.00667111, y: 0.075215735}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -3110,13 +3149,13 @@ HingeJoint2D:
   m_GameObject: {fileID: 1820758055876172}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 50731059392345432}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
+  m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.00000052846605, y: -0.07999899}
-  m_ConnectedAnchor: {x: 0.006665017, y: 0.048771568}
+  m_ConnectedAnchor: {x: -0.00000062689435, y: 0.063107826}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -3133,13 +3172,13 @@ HingeJoint2D:
   m_GameObject: {fileID: 1593248286351302}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 50386506426776982}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
+  m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.023332836, y: 0.006207592}
-  m_ConnectedAnchor: {x: -0.005999867, y: 0.08300005}
+  m_ConnectedAnchor: {x: 0.00000076293946, y: 0.10000019}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -3156,13 +3195,13 @@ HingeJoint2D:
   m_GameObject: {fileID: 1833782235141448}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 50524250014053968}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
+  m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.002626419, y: 0.06627107}
-  m_ConnectedAnchor: {x: 0.0031091534, y: -0.06948027}
+  m_ConnectedAnchor: {x: -0.009975433, y: -0.0784729}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -3179,13 +3218,13 @@ HingeJoint2D:
   m_GameObject: {fileID: 1751884559519144}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 50524250014053968}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
+  m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.002626419, y: 0.06627107}
-  m_ConnectedAnchor: {x: -0.04800016, y: -0.0605}
+  m_ConnectedAnchor: {x: -0.061948396, y: -0.062005807}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -3202,13 +3241,13 @@ HingeJoint2D:
   m_GameObject: {fileID: 1769224704615078}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 50524250014053968}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
+  m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.002626419, y: 0.06627107}
-  m_ConnectedAnchor: {x: 0.0050004805, y: -0.07011046}
+  m_ConnectedAnchor: {x: 0.017124176, y: -0.078772925}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -3225,13 +3264,13 @@ HingeJoint2D:
   m_GameObject: {fileID: 1115159117506236}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 50524250014053968}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
+  m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.002626419, y: 0.06627107}
-  m_ConnectedAnchor: {x: 0.056408867, y: -0.059272334}
+  m_ConnectedAnchor: {x: 0.067913055, y: -0.061988257}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -3248,13 +3287,13 @@ HingeJoint2D:
   m_GameObject: {fileID: 1742021843082056}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 50524250014053968}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
+  m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: -0.06}
-  m_ConnectedAnchor: {x: -0.049999826, y: 0.052}
+  m_ConnectedAnchor: {x: -0.06930389, y: 0.052000046}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -3271,13 +3310,13 @@ HingeJoint2D:
   m_GameObject: {fileID: 1639342628213378}
   m_Enabled: 1
   serializedVersion: 4
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 50524250014053968}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 0
+  m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: -0.07}
-  m_ConnectedAnchor: {x: -0.0010000387, y: 0.073500015}
+  m_ConnectedAnchor: {x: -0.0010002137, y: 0.08850002}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
