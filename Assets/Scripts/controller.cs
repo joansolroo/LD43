@@ -29,11 +29,13 @@ public class controller : MonoBehaviour
         //  Movement
         float translation = Input.GetAxis("Horizontal") * speed;
         translation *= Time.deltaTime;
-        transform.position += new Vector3(translation, 0, 0);
+        //transform.position += new Vector3(translation, 0, 0);
+        rb.AddForce(new Vector3(translation * 1000, 0, 0));
 
         if (Input.GetButtonDown("Jump"))
         {
-            rb.velocity = new Vector3(0, 30, 0);
+            //rb.velocity = new Vector3(0, 30, 0);
+            rb.AddForce(new Vector3(0, 30000, 0));
         }
 
         if (Input.GetButton("Fire2"))
