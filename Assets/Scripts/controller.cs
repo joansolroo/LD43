@@ -12,6 +12,8 @@ public class controller : MonoBehaviour
     public float currentScore = 0.0f;
     public float scoreSpeed = 0.1f;
 
+    private float prevVerticalPos;
+
 
     private bool previousGrounded = false;
 
@@ -19,6 +21,7 @@ public class controller : MonoBehaviour
     void Start ()
     {
         rb = GetComponent<Rigidbody2D>();
+        prevVerticalPos = transform.position.y;
     }
     
     void Update()
@@ -26,7 +29,7 @@ public class controller : MonoBehaviour
         //  Movement
         float translation = Input.GetAxis("Horizontal") * speed;
         translation *= Time.deltaTime;
-        transform.Translate(translation, 0, 0);
+        transform.position += new Vector3(translation, 0, 0);
 
         if (Input.GetButtonDown("Jump"))
         {
@@ -41,15 +44,17 @@ public class controller : MonoBehaviour
         {
             transform.Rotate(0, 0, -rotationSpeed * Time.deltaTime);
         }
-
-
+        
         if (previousGrounded && Mathf.Abs(rb.velocity.y) > 0.0001f)
         {
             previousGrounded = false;
         }
 
+
+
         //  score
-        if(Mathf.Abs(rb.velocity.y) < 0.0001f)
+        Debug.Log(transform.position.y - prevVerticalPos);
+        if(Mathf.Abs(rb.velocity.y) < 0.0001f && transform.position.y - prevVerticalPos < 0.0f)
         {
             if(!previousGrounded)
             {
@@ -61,6 +66,7 @@ public class controller : MonoBehaviour
                 else
                     score += currentScore;
                 currentScore = 0.0f;
+                previousGrounded = true;
             }
             previousGrounded = true;
         }
@@ -69,5 +75,8 @@ public class controller : MonoBehaviour
         {
             currentScore += scoreSpeed * Mathf.Abs(rb.angularVelocity);
         }
+
+        // updating parameters
+        prevVerticalPos = transform.position.y;
     }
 }
