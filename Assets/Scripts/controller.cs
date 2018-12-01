@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class controller : MonoBehaviour
 {
     public float speed = 10.0f;
-    public float rotationSpeed = 100.0f;
+    public float rotationSpeed = 450.0f;
     private Rigidbody2D rb;
 
     public float score;
@@ -42,11 +42,13 @@ public class controller : MonoBehaviour
 
         if (Input.GetButton("Fire2"))
         {
-            transform.Rotate(0, 0,  rotationSpeed * Time.deltaTime);
+            rb.AddTorque(rotationSpeed);
+            //transform.parent.Rotate(0, 0,  rotationSpeed * Time.deltaTime);
         }
         if (Input.GetButton("Fire1"))
         {
-            transform.Rotate(0, 0, -rotationSpeed * Time.deltaTime);
+            rb.AddTorque(-rotationSpeed);
+            //transform.parent.Rotate(0, 0, -rotationSpeed * Time.deltaTime);
         }
         
         if (previousGrounded && Mathf.Abs(rb.velocity.y) > velocityEpsilon)

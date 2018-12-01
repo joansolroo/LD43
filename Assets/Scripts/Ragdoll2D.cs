@@ -18,6 +18,7 @@ public class Ragdoll2D : MonoBehaviour {
 
     public void CollisionEnter(Ragdoll2DPart part, Collision2D collision)
     {
+        if (collision.relativeVelocity.magnitude > 2) ;
         //TODO: handle hits
     }
     public void CollisionExit(Ragdoll2DPart part, Collision2D collision)
