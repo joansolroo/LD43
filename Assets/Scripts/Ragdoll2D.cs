@@ -15,8 +15,35 @@ public class Ragdoll2D : MonoBehaviour {
         }
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    public void CollisionEnter(Ragdoll2DPart part, Collision2D collision)
+    {
+        //TODO: handle hits
+    }
+    public void CollisionExit(Ragdoll2DPart part, Collision2D collision)
+    {
+        //TODO: handle hits
+    }
+
+    public bool IsColliding()
+    {
+        foreach(Ragdoll2DPart part in parts)
+        {
+            if (part.IsColliding()) return true;
+        }
+        return false;
+    }
+    public Ragdoll2DPart[] GetCollisions()
+    {
+        if (!IsColliding())
+        {
+            return null;
+        }
+        List<Ragdoll2DPart> hits = new List<Ragdoll2DPart>();
+        foreach (Ragdoll2DPart part in parts)
+        {
+            if (part.IsColliding()) hits.Add(part);
+        }
+        return hits.ToArray();
+    }
 }
