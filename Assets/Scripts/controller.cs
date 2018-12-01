@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class controller : MonoBehaviour
 {
@@ -8,18 +10,20 @@ public class controller : MonoBehaviour
     public float rotationSpeed = 100.0f;
     private Rigidbody2D rb;
 
-    public float score = 0.0f;
+    public float score;
     public float currentScore = 0.0f;
     public float scoreSpeed = 0.1f;
 
     private float prevVerticalPos;
-
+    public float velocityEpsilon = 0.01f;
 
     private bool previousGrounded = false;
+    public Text scoreDisplay;
 
     // Use this for initialization
     void Start ()
     {
+        score = 0.0f;
         rb = GetComponent<Rigidbody2D>();
         prevVerticalPos = transform.position.y;
     }
@@ -29,12 +33,10 @@ public class controller : MonoBehaviour
         //  Movement
         float translation = Input.GetAxis("Horizontal") * speed;
         translation *= Time.deltaTime;
-        //transform.position += new Vector3(translation, 0, 0);
         rb.AddForce(new Vector3(translation * 1000, 0, 0));
 
         if (Input.GetButtonDown("Jump"))
         {
-            //rb.velocity = new Vector3(0, 30, 0);
             rb.AddForce(new Vector3(0, 30000, 0));
         }
 
@@ -47,7 +49,7 @@ public class controller : MonoBehaviour
             transform.Rotate(0, 0, -rotationSpeed * Time.deltaTime);
         }
         
-        if (previousGrounded && Mathf.Abs(rb.velocity.y) > 0.0001f)
+        if (previousGrounded && Mathf.Abs(rb.velocity.y) > velocityEpsilon)
         {
             previousGrounded = false;
         }
@@ -55,8 +57,8 @@ public class controller : MonoBehaviour
 
 
         //  score
-        Debug.Log(transform.position.y - prevVerticalPos);
-        if(Mathf.Abs(rb.velocity.y) < 0.0001f && transform.position.y - prevVerticalPos < 0.0f)
+        //Debug.Log(transform.position.y - prevVerticalPos);
+        if(Mathf.Abs(rb.velocity.y) < velocityEpsilon && transform.position.y - prevVerticalPos < 0.0f)
         {
             if(!previousGrounded)
             {
@@ -67,6 +69,10 @@ public class controller : MonoBehaviour
                 }
                 else
                     score += currentScore;
+
+                scoreDisplay.text = score.ToString();
+
+                Debug.Log(score);
                 currentScore = 0.0f;
                 previousGrounded = true;
             }
