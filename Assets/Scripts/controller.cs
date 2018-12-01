@@ -89,14 +89,15 @@ public class controller : MonoBehaviour
                 if (Mathf.Abs(ragdoll.transform.localRotation.z) < 0.3f)
                 {
                     score += 2.0f * currentScore;
-                    Debug.Log("combo !");
+                    //Debug.Log("combo !");
                 }
                 else
                     score += currentScore;
 
-                scoreDisplay.text = score.ToString();
+                if(scoreDisplay)
+                    scoreDisplay.text = score.ToString();
 
-                Debug.Log(score);
+                //Debug.Log(score);
                 currentScore = 0.0f;
                 previousGrounded = true;
             }
