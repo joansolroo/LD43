@@ -8,6 +8,7 @@ public class controller : MonoBehaviour
 {
     public float speed = 10.0f;
     public float rotationSpeed = 450.0f;
+    public float jumpForce = 450.0f;
     private Rigidbody2D rb;
 
     public float score;
@@ -20,6 +21,7 @@ public class controller : MonoBehaviour
     private bool previousGrounded = false;
     public Text scoreDisplay;
 
+    [SerializeField] float mass = 50; // TODO: get from body
     // Use this for initialization
     void Start ()
     {
@@ -37,7 +39,7 @@ public class controller : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
-            rb.AddForce(new Vector3(0, 30000, 0));
+            rb.AddForce(new Vector3(0, mass*jumpForce, 0));
         }
 
         if (Input.GetButton("Fire2"))
