@@ -21,6 +21,7 @@ public class Ragdoll2D : MonoBehaviour
     public Ragdoll2DPart[] feet = new Ragdoll2DPart[2];
 
     public GameObject hitParticle;
+    public GameObject ouchParticle;
 
     public List<ScoreType> currentComboList = new List<ScoreType>();
 
@@ -38,7 +39,7 @@ public class Ragdoll2D : MonoBehaviour
                 sound.Play();
             }
             currentComboList.Add(ScoreType.Hit);
-            Instantiate(hitParticle, collision.contacts[0].point, Quaternion.identity);
+            Instantiate(hitParticle, collision.contacts[0].point, Quaternion.AngleAxis(Random.Range(-40, 40), new Vector3(0, 0, 1)));
             //Debug.Log("Combo (Aie!) : " + part.gameObject.name + "Combo Size : " + currentComboList.Count);
         }
     }
@@ -92,6 +93,7 @@ public class Ragdoll2D : MonoBehaviour
         {
             //over
         }
+        Instantiate(ouchParticle, part.gameObject.transform.position, Quaternion.AngleAxis(Random.Range(-40, 40), new Vector3(0, 0, 1)));
     }
 
     public Ragdoll2DPart[] GetCollisions()

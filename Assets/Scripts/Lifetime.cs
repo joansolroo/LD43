@@ -8,6 +8,6 @@ public class Lifetime : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        Destroy(gameObject, 1.0f);
+        Destroy(gameObject, Random.Range(0.5f, 0.8f));
     }
 }
