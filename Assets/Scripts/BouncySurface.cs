@@ -7,9 +7,10 @@ public class BouncySurface : MonoBehaviour {
     [SerializeField] float bounciness = 10;
     [SerializeField] float minFactor = 3;
     [SerializeField] float maxFactor = 3;
+    [SerializeField] AudioSource sound;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
         float proj = Vector2.Dot(collision.contacts[0].normal, collision.relativeVelocity);
 
         Vector2 v = -(collision.relativeVelocity + 2 * proj * collision.contacts[0].normal);
@@ -18,6 +19,11 @@ public class BouncySurface : MonoBehaviour {
         Ragdoll2DPart RDpart = collision.gameObject.GetComponent<Ragdoll2DPart>();
         if (RDpart!=null)
         {
+            if (!sound.isPlaying)
+            {
+                sound.pitch = Random.Range(0.6f, 1.4f);
+                sound.Play();
+            }
             RDpart.ragdoll.ResetVelocty();
             RDpart.ragdoll.AddVelocity(v * bounciness); 
             Debug.DrawLine(RDpart.ragdoll.center.transform.position, RDpart.ragdoll.center.transform.position + new Vector3(v.x * 0.1f, v.y * 0.1f,0));
