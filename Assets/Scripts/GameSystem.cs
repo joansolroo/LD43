@@ -13,6 +13,7 @@ public class GameSystem : MonoBehaviour {
     public GameObject stopUI;
 
     public Text timeDisplay;
+    public Text endScoreDisplay;
     public Button retry, quit;
 
     // Use this for initialization
@@ -51,15 +52,16 @@ public class GameSystem : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-       
+
+        timeDisplay.text = ((int)gameDuration).ToString();
+
         if((gameDuration < 0 || !player.GetComponent<Ragdoll2D>().IsAlive()) && !pause)
         {
             SetPause(true);
             gameUI.SetActive(false);
             stopUI.SetActive(true);
 
-            timeDisplay.text = gameDuration.ToString();
-            //scoreDisplay.text = ((int)(player.GetComponent<controller>().score)).ToString();
+            endScoreDisplay.text = ((int)(player.GetComponent<controller>().score)).ToString();
         }
         else if (gameDuration >= 0.0f)
         {
