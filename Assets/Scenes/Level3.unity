@@ -1302,7 +1302,7 @@ MonoBehaviour:
   player: {fileID: 1534122840}
   gameUI: {fileID: 875830222}
   stopUI: {fileID: 1457008489}
-  scoreDisplay: {fileID: 1254436502}
+  timeDisplay: {fileID: 0}
   retry: {fileID: 103101100}
   quit: {fileID: 298450721}
 --- !u!4 &1057303782
