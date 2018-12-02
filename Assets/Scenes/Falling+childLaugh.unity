@@ -943,7 +943,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f73722cd075ed7b4ebe74fc5d00b8bcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameDuration: 60
+  gameDuration: 2000
   pause: 0
   player: {fileID: 1534122840}
   gameUI: {fileID: 668118496}
@@ -954,6 +954,20 @@ MonoBehaviour:
   quit: {fileID: 298450721}
   scenes:
   - Level3
+  - Level2
+  - Level4
+  transitionsScenes:
+  - Falling
+  - Falling+HiddenTrampo
+  - Falling
+  scenesTime:
+  - 25
+  - 35
+  - 25
+  transitionTime:
+  - 5
+  - 6
+  - 5
   fader: {fileID: 2033821781}
 --- !u!4 &1057303782
 Transform:

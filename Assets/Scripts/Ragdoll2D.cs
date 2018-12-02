@@ -88,14 +88,17 @@ public class Ragdoll2D : MonoBehaviour
     }
     public void RemoveLimb(Ragdoll2DPart part)
     {
-        parts.Remove(part);
-        currentComboList.Add(ScoreType.LoseLimb);
-        //Debug.Log("Combo (LosingPart) : " + part.gameObject.name + "Combo Size : " + currentComboList.Count);
-        if (part == head)
+        if (part.attached)
         {
-            //over
+            parts.Remove(part);
+            currentComboList.Add(ScoreType.LoseLimb);
+            //Debug.Log("Combo (LosingPart) : " + part.gameObject.name + "Combo Size : " + currentComboList.Count);
+            if (part == head)
+            {
+                //over
+            }
+            Instantiate(ouchParticle, part.gameObject.transform.position, Quaternion.AngleAxis(Random.Range(-40, 40), new Vector3(0, 0, 1)));
         }
-        Instantiate(ouchParticle, part.gameObject.transform.position, Quaternion.AngleAxis(Random.Range(-40, 40), new Vector3(0, 0, 1)));
     }
 
     public Ragdoll2DPart[] GetCollisions()

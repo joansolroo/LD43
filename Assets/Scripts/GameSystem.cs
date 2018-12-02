@@ -19,6 +19,10 @@ public class GameSystem : MonoBehaviour {
     public Button retry, quit;
 
     public string[] scenes;
+    public string[] transitionsScenes;
+    public float[] scenesTime;
+    public float[] transitionTime;
+    private int index = 0;
     public Fade fader;
 
 
@@ -31,7 +35,7 @@ public class GameSystem : MonoBehaviour {
         quit.onClick.AddListener(QuitGame);
         retry.onClick.AddListener(RetryLevel);
         fader.FadeIn();
-        StartCoroutine(LoadSceneDelayed(scenes[0], 10, true));
+        StartCoroutine(LoadSceneDelayed(true));
     }
 
     void QuitGame()
@@ -78,15 +82,23 @@ public class GameSystem : MonoBehaviour {
         }
     }
 
-    IEnumerator LoadSceneDelayed(string level, float time, bool incremental = false)
+    IEnumerator LoadSceneDelayed(bool incremental = false)
     {
 
-        yield return new WaitForSeconds(time);
-        fader.FadeToWhite();
-        SceneManager.LoadScene(level, incremental?LoadSceneMode.Additive : LoadSceneMode.Single);
-        yield return new WaitForSeconds(15);
-        fader.FadeToWhite();
-        SceneManager.UnloadScene(level);
+        yield return new WaitForSeconds(15f);
+        for (int i = 0; i < 3; i++)
+        {
+            fader.FadeToWhite();
+            SceneManager.LoadScene(scenes[i], incremental ? LoadSceneMode.Additive : LoadSceneMode.Single);
+            yield return new WaitForSeconds(scenesTime[i]);
+            fader.FadeToWhite();
+            SceneManager.UnloadScene(scenes[i]);
+            fader.FadeToWhite();
+            SceneManager.LoadScene(transitionsScenes[i], incremental ? LoadSceneMode.Additive : LoadSceneMode.Single);
+            yield return new WaitForSeconds(transitionTime[i]);
+            fader.FadeToWhite();
+            SceneManager.UnloadScene(transitionsScenes[i]);
+        }
     }
 }
 

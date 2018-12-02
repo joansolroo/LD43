@@ -21,11 +21,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Level1.unity
     guid: e247a9ec2b0440a40b481440809985ba
   - enabled: 1
+    path: Assets/Scenes/Falling.unity
+    guid: 38d25b545e5ec60479248750a6595077
+  - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: c31e354b052db134aa14d38c9be092db
   - enabled: 1
     path: Assets/Scenes/Level3.unity
     guid: 8f094ed338932cc4c9d02bb547dbb9b9
+  - enabled: 1
+    path: Assets/Scenes/Falling+HiddenTrampo.unity
+    guid: eceffc40c1e773447aa162dc6322c408
   - enabled: 1
     path: Assets/Scenes/Level4.unity
     guid: e82295cdc942a014491408c5bae4c51c
