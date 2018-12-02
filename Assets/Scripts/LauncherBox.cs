@@ -40,9 +40,9 @@ public class LauncherBox : MonoBehaviour {
 
     void Update ()
     {
-        if (string.IsNullOrEmpty(scene) && Input.GetButtonDown("Submit"))
+        if (launched && string.IsNullOrEmpty(scene) && Input.GetButtonDown("Submit"))
             CloseCallback();
-        else if (Input.GetButtonDown("Submit"))
+        else if (launched && Input.GetButtonDown("Submit"))
             NextScene();
     }
 }
