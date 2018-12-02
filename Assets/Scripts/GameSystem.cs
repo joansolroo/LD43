@@ -34,18 +34,30 @@ public class GameSystem : MonoBehaviour {
         Application.LoadLevel(Application.loadedLevel);
     }
 
+    public void SetPause(bool b)
+    {
+        if(b)
+        {
+            pause = true;
+            player.GetComponent<controller>().enabled = false;
+        }
+        else
+        {
+            pause = false;
+            player.GetComponent<controller>().enabled = true;
+        }
+    }
+
     // Update is called once per frame
     void Update () {
        
         if((gameDuration < 0 || !player.GetComponent<Ragdoll2D>().IsAlive()) && !pause)
         {
-            pause = true;
+            SetPause(true);
             gameUI.SetActive(false);
             stopUI.SetActive(true);
 
             scoreDisplay.text = ((int)(player.GetComponent<controller>().score)).ToString();
-
-            player.GetComponent<controller>().enabled = false;
         }
         else if (gameDuration >= 0.0f)
         {
