@@ -25,7 +25,7 @@ public class BouncySurface : MonoBehaviour
 
         Ragdoll2DPart RDpart = collision.gameObject.GetComponent<Ragdoll2DPart>();
 
-        if (RDpart != null)
+        if (RDpart != null && RDpart.attached)
         {
             if (!sound.isPlaying)
             {
