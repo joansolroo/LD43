@@ -106,7 +106,7 @@ public class Ragdoll2DPart : MonoBehaviour
 
     void Damaged(Vector2 relativeVelocity)
     {
-        float dmg = relativeVelocity.magnitude * 0.5f;
+        float dmg = relativeVelocity.magnitude * 0.3f;
         dmg = Mathf.Max(0, dmg - armor);
         if (dmg > 0)
         {

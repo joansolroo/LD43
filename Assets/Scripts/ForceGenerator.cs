@@ -36,7 +36,7 @@ public class ForceGenerator : MonoBehaviour {
             ragdoll.Simulated = true;
             //yield return new WaitForSeconds(0.1f);
             ragdoll.ResetVelocty();
-            ragdoll.AddForceCenter(this.transform.right * force);
+            ragdoll.AddVelocity(this.transform.right * force);
             Debug.DrawLine(ragdoll.center.transform.position, ragdoll.center.transform.position + this.transform.right * force);
             yield return new WaitForSeconds(2f);
             launching = false;
