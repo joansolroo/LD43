@@ -12,10 +12,17 @@ public class Ragdoll2D : MonoBehaviour
     public Ragdoll2DPart[] hands = new Ragdoll2DPart[2];
     public Ragdoll2DPart[] feet = new Ragdoll2DPart[2];
 
+    public ArrayList currentComboList = new ArrayList();
+
+    public float magnitudeThreshold = 5f; 
+
     public void CollisionEnter(Ragdoll2DPart part, Collision2D collision)
     {
-        if (collision.relativeVelocity.magnitude > 2) ;
-        //TODO: handle hits
+        if (collision.relativeVelocity.magnitude > magnitudeThreshold)
+        {
+            currentComboList.Add(part);
+            Debug.Log("Combo (Aie!) : " + part.gameObject.name + "Combo Size : " + currentComboList.Count);
+        }
     }
     public void CollisionExit(Ragdoll2DPart part, Collision2D collision)
     {
@@ -61,6 +68,8 @@ public class Ragdoll2D : MonoBehaviour
     public void RemoveLimb(Ragdoll2DPart part)
     {
         parts.Remove(part);
+        currentComboList.Add(part);
+        Debug.Log("Combo (LosingPart) : " + part.gameObject.name + "Combo Size : " + currentComboList.Count);
         if (part == head)
         {
             //over
@@ -94,7 +103,7 @@ public class Ragdoll2D : MonoBehaviour
         }
     }
 
-    static float velocityEpsilon = 0.01f;
+    static float velocityEpsilon = 0.1f;
     public bool isGrounded()
     {
         return Mathf.Abs(center.RB2D.velocity.y) > velocityEpsilon;

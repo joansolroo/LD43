@@ -1953,6 +1953,16 @@ Prefab:
       propertyPath: scoreDisplay
       value: 
       objectReference: {fileID: 283430660}
+    - target: {fileID: 114896790620615878, guid: ec500e8ac7645c349b7aec08b7aa5e81,
+        type: 2}
+      propertyPath: movementSpeed
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114896790620615878, guid: ec500e8ac7645c349b7aec08b7aa5e81,
+        type: 2}
+      propertyPath: rotationSpeed
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec500e8ac7645c349b7aec08b7aa5e81, type: 2}
   m_IsPrefabAsset: 0

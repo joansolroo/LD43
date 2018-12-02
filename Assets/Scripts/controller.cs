@@ -13,7 +13,7 @@ public class controller : MonoBehaviour
 
     public float score;
     public float currentScore = 0.0f;
-    public float scoreSpeed = 0.1f;
+    public float scoreSpeed = 1f;
 
     private float prevVerticalPos;
 
@@ -86,18 +86,21 @@ public class controller : MonoBehaviour
         {
             if (!previousGrounded)
             {
+                /*
                 if (Mathf.Abs(ragdoll.transform.localRotation.z) < 0.3f)
                 {
                     score += 2.0f * currentScore;
                     //Debug.Log("combo !");
                 }
                 else
-                    score += currentScore;
+                */
+                score += (int)currentScore * ragdoll.currentComboList.Count;
 
                 if(scoreDisplay)
                     scoreDisplay.text = score.ToString();
 
                 //Debug.Log(score);
+                ragdoll.currentComboList.Clear();
                 currentScore = 0.0f;
                 previousGrounded = true;
             }
@@ -106,7 +109,7 @@ public class controller : MonoBehaviour
 
         if (!previousGrounded)
         {
-            currentScore += scoreSpeed * Mathf.Abs(ragdoll.center.RB2D.angularVelocity);
+            currentScore += scoreSpeed * Time.deltaTime;//* (int)Mathf.Abs(ragdoll.center.RB2D.angularVelocity);
         }
 
         // updating parameters

@@ -30,7 +30,7 @@ public class Ragdoll2DPart : MonoBehaviour
         {
             RB2D.AddForce(collision.relativeVelocity);
 
-            Debug.Log("hit:" + this.name + " to " + collision.gameObject.name);
+            //Debug.Log("hit:" + this.name + " to " + collision.gameObject.name);
             hits.Add(collision.rigidbody);
             ragdoll.CollisionEnter(this, collision);
 
@@ -46,7 +46,7 @@ public class Ragdoll2DPart : MonoBehaviour
     {
         if (collision.transform.parent != this.transform.parent)
         {
-            Debug.Log("hit out:" + this.name + " to " + collision.gameObject.name);
+            //Debug.Log("hit out:" + this.name + " to " + collision.gameObject.name);
             hits.Remove(collision.rigidbody);
             //ragdoll.CollisionExit(this, collision);
         }
