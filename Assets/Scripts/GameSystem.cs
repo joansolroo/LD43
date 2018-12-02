@@ -19,8 +19,8 @@ public class GameSystem : MonoBehaviour {
     // Use this for initialization
     void Start() {
         pause = false;
-        gameUI.SetActive(true);
-        stopUI.SetActive(false);
+        //gameUI.SetActive(true);
+        //stopUI.SetActive(false);
 
         quit.onClick.AddListener(QuitGame);
         retry.onClick.AddListener(RetryLevel);
@@ -58,10 +58,11 @@ public class GameSystem : MonoBehaviour {
         if((gameDuration < 0 || !player.GetComponent<Ragdoll2D>().IsAlive()) && !pause)
         {
             SetPause(true);
-            gameUI.SetActive(false);
-            stopUI.SetActive(true);
+            //gameUI.SetActive(false);
+            //stopUI.SetActive(true);
 
             endScoreDisplay.text = ((int)(player.GetComponent<controller>().score)).ToString();
+            player.GetComponent<Rigidbody2D>().isKinematic = true;
         }
         else if (gameDuration >= 0.0f)
         {
