@@ -62,12 +62,12 @@ public class controller : MonoBehaviour
 
         if (translation < 0)
         {
-            ragdoll.AddForceCenter(new Vector2(translation, 0));
+            ragdoll.AddVelocity(new Vector2(translation, 0));
             ragdoll.AddTorque(rotationSpeed);
         }
         else if (translation > 0)
         {
-            ragdoll.AddForceCenter(new Vector2(translation, 0));
+            ragdoll.AddVelocity(new Vector2(translation, 0));
             ragdoll.AddTorque(-rotationSpeed);
         }
 
