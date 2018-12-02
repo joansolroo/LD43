@@ -114,7 +114,7 @@ public class controller : MonoBehaviour
         {
             multiplier += 1 * comboPonderation[(int)trick];
         }
-        Debug.Log("Multiplier : " + multiplier);
+        //Debug.Log("Multiplier : " + multiplier);
         score += (int)currentScore * multiplier;
 
         if (scoreDisplay)
