@@ -1669,6 +1669,7 @@ MonoBehaviour:
   currentScore: 0
   scoreSpeed: 0.1
   scoreDisplay: {fileID: 0}
+  comboPonderation: 
   mass: 50
 --- !u!1001 &1024295943
 Prefab:
@@ -1946,6 +1947,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114896790620615878, guid: ec500e8ac7645c349b7aec08b7aa5e81,
+        type: 2}
+      propertyPath: comboPonderation.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4611380037487062, guid: ec500e8ac7645c349b7aec08b7aa5e81, type: 2}
       propertyPath: m_LocalPosition.x
       value: 53.8
@@ -1997,6 +2003,21 @@ Prefab:
         type: 2}
       propertyPath: scoreSpeed
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114896790620615878, guid: ec500e8ac7645c349b7aec08b7aa5e81,
+        type: 2}
+      propertyPath: comboPonderation.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114896790620615878, guid: ec500e8ac7645c349b7aec08b7aa5e81,
+        type: 2}
+      propertyPath: comboPonderation.Array.data[1]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114896790620615878, guid: ec500e8ac7645c349b7aec08b7aa5e81,
+        type: 2}
+      propertyPath: comboPonderation.Array.data[2]
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec500e8ac7645c349b7aec08b7aa5e81, type: 2}

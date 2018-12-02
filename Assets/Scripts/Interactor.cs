@@ -19,7 +19,7 @@ public class Interactor : MonoBehaviour {
         if (part.ragdoll)
         {
             part.ragdoll.currentComboList.Add(ScoreType.HitObject);
-            Debug.Log("Combo (Object!) : " + this.gameObject.name + "Combo Size : " + part.ragdoll.currentComboList.Count);
+            //Debug.Log("Combo (Object!) : " + this.gameObject.name + "Combo Size : " + part.ragdoll.currentComboList.Count);
         }
     }
 }
