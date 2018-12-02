@@ -34,6 +34,13 @@ public class Ragdoll2DPart : MonoBehaviour
             hits.Add(collision.rigidbody);
             ragdoll.CollisionEnter(this, collision);
 
+            // try to get interactor if it's a interactive object for score purpose
+            Interactor interactorComponent = collision.gameObject.GetComponent<Interactor>();
+            if (interactorComponent)
+            {
+                interactorComponent.Collide(this);
+            }
+
             Damaged(collision.relativeVelocity);
             if (sticky)
             {
@@ -106,7 +113,7 @@ public class Ragdoll2DPart : MonoBehaviour
             
             health -= dmg;
             this.gameObject.GetComponent<SpriteRenderer>().color = Color.Lerp(Color.red, Color.white, health / 100f);
-            /*if (health <= 0)
+            if (health <= 0)
             {
                 ragdoll.RemoveLimb(this);
                 HingeJoint2D joint = GetComponent<HingeJoint2D>();
@@ -114,10 +121,9 @@ public class Ragdoll2DPart : MonoBehaviour
                 {
                     joint.enabled = false;
                     attached = false;
-                    RB2D.AddForce(collision.relativeVelocity);
                 }
 
-            }*/
+            }
         }
     }
 }
