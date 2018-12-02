@@ -28,7 +28,7 @@ public class Ragdoll2DPart : MonoBehaviour
     {
         if (collision.transform.parent != this.transform.parent)
         {
-            RB2D.AddForce(collision.relativeVelocity);
+            
 
             //Debug.Log("hit:" + this.name + " to " + collision.gameObject.name);
             hits.Add(collision.rigidbody);
@@ -106,7 +106,7 @@ public class Ragdoll2DPart : MonoBehaviour
             
             health -= dmg;
             this.gameObject.GetComponent<SpriteRenderer>().color = Color.Lerp(Color.red, Color.white, health / 100f);
-            if (health <= 0)
+            /*if (health <= 0)
             {
                 ragdoll.RemoveLimb(this);
                 HingeJoint2D joint = GetComponent<HingeJoint2D>();
@@ -114,9 +114,10 @@ public class Ragdoll2DPart : MonoBehaviour
                 {
                     joint.enabled = false;
                     attached = false;
+                    RB2D.AddForce(collision.relativeVelocity);
                 }
 
-            }
+            }*/
         }
     }
 }

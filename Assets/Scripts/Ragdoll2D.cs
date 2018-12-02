@@ -121,6 +121,14 @@ public class Ragdoll2D : MonoBehaviour
     {
         return head.attached;
     }
+    public void AddVelocity(Vector2 velocity)
+    {
+        center.RB2D.velocity+=(velocity);
+    }
+    public void ResetVelocty()
+    {
+        center.RB2D.velocity = Vector2.zero;
+    }
     public void AddForceCenter(Vector2 force)
     {
         center.RB2D.AddForce(force * Mass);
