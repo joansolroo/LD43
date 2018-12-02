@@ -195,4 +195,24 @@ public class Ragdoll2D : MonoBehaviour
             hand.SetSticky(false);
         }
     }
+
+    bool simulated = true;
+    public bool Simulated
+    {
+        get
+        {
+            return simulated;
+        }
+        set
+        {
+            foreach(Ragdoll2DPart part in parts)
+            {
+                if (part.attached)
+                {
+                    part.RB2D.simulated = value;
+                }
+            }
+            simulated = value;
+        }
+    }
 }
