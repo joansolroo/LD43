@@ -39,6 +39,7 @@ public class GameSystem : MonoBehaviour {
         if(b)
         {
             pause = true;
+            player.GetComponent<controller>().Stop();
             player.GetComponent<controller>().enabled = false;
         }
         else

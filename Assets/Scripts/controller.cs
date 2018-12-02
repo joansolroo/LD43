@@ -20,6 +20,8 @@ public class controller : MonoBehaviour
     private bool previousGrounded = false;
     public Text scoreDisplay;
 
+    public int[] comboPonderation;
+
     [SerializeField] float mass = 50; // TODO: get from body
     // Use this for initialization
     void Start ()
@@ -34,6 +36,11 @@ public class controller : MonoBehaviour
         ComputeInput();
 
         ComputeScore();
+    }
+
+    public void Stop()
+    {
+        AddCurrentCombo();
     }
 
     void ComputeInput()
@@ -86,23 +93,7 @@ public class controller : MonoBehaviour
         {
             if (!previousGrounded)
             {
-                /*
-                if (Mathf.Abs(ragdoll.transform.localRotation.z) < 0.3f)
-                {
-                    score += 2.0f * currentScore;
-                    //Debug.Log("combo !");
-                }
-                else
-                */
-                score += (int)currentScore * ragdoll.currentComboList.Count;
-
-                if(scoreDisplay)
-                    scoreDisplay.text = score.ToString();
-
-                //Debug.Log(score);
-                ragdoll.currentComboList.Clear();
-                currentScore = 0.0f;
-                previousGrounded = true;
+                AddCurrentCombo();
             }
             previousGrounded = true;
         }
@@ -114,5 +105,24 @@ public class controller : MonoBehaviour
 
         // updating parameters
         prevVerticalPos = ragdoll.transform.position.y;
+    }
+
+    public void AddCurrentCombo()
+    {
+        int multiplier = 0;
+        foreach (ScoreType trick in ragdoll.currentComboList)
+        {
+            multiplier += 1 * comboPonderation[(int)trick];
+        }
+        Debug.Log("Multiplier : " + multiplier);
+        score += (int)currentScore * multiplier;
+
+        if (scoreDisplay)
+            scoreDisplay.text = score.ToString();
+
+        //Debug.Log(score);
+        ragdoll.currentComboList.Clear();
+        currentScore = 0.0f;
+        previousGrounded = true;
     }
 }

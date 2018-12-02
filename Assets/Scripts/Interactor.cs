@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Interactor : MonoBehaviour {
 
-    public Ragdoll2D ragdoll;
-
 	// Use this for initialization
 	void Start () {
 		
@@ -16,11 +14,12 @@ public class Interactor : MonoBehaviour {
 		
 	}
 
-    void Interact()
+    public void Collide(Ragdoll2DPart part)
     {
-        if (ragdoll)
+        if (part.ragdoll)
         {
-            ragdoll.currentComboList.Add(this);
+            part.ragdoll.currentComboList.Add(ScoreType.HitObject);
+            //Debug.Log("Combo (Object!) : " + this.gameObject.name + "Combo Size : " + part.ragdoll.currentComboList.Count);
         }
     }
 }

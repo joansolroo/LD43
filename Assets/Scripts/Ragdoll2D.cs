@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ScoreType
+{
+    Hit,
+    LoseLimb,
+    HitObject
+};
+
+
 public class Ragdoll2D : MonoBehaviour
 {
 
@@ -20,8 +28,8 @@ public class Ragdoll2D : MonoBehaviour
     {
         if (collision.relativeVelocity.magnitude > magnitudeThreshold)
         {
-            currentComboList.Add(part);
-            Debug.Log("Combo (Aie!) : " + part.gameObject.name + "Combo Size : " + currentComboList.Count);
+            currentComboList.Add(ScoreType.Hit);
+            //Debug.Log("Combo (Aie!) : " + part.gameObject.name + "Combo Size : " + currentComboList.Count);
         }
     }
     public void CollisionExit(Ragdoll2DPart part, Collision2D collision)
@@ -68,8 +76,8 @@ public class Ragdoll2D : MonoBehaviour
     public void RemoveLimb(Ragdoll2DPart part)
     {
         parts.Remove(part);
-        currentComboList.Add(part);
-        Debug.Log("Combo (LosingPart) : " + part.gameObject.name + "Combo Size : " + currentComboList.Count);
+        currentComboList.Add(ScoreType.LoseLimb);
+        //Debug.Log("Combo (LosingPart) : " + part.gameObject.name + "Combo Size : " + currentComboList.Count);
         if (part == head)
         {
             //over
