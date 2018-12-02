@@ -50,3 +50,6 @@ TagManager:
   - name: gears
     uniqueID: 1509361467
     locked: 0
+  - name: front
+    uniqueID: 379440667
+    locked: 0
