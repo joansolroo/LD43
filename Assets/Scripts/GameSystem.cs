@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+using UnityEngine.SceneManagement;
+
 public class GameSystem : MonoBehaviour {
 
     public float gameDuration;
@@ -16,6 +18,10 @@ public class GameSystem : MonoBehaviour {
     public Text endScoreDisplay;
     public Button retry, quit;
 
+    public string[] scenes;
+    public Fade fader;
+
+
     // Use this for initialization
     void Start() {
         pause = false;
@@ -24,6 +30,8 @@ public class GameSystem : MonoBehaviour {
 
         quit.onClick.AddListener(QuitGame);
         retry.onClick.AddListener(RetryLevel);
+        fader.FadeIn();
+        StartCoroutine(LoadSceneDelayed(scenes[0], 10, true));
     }
 
     void QuitGame()
@@ -69,4 +77,16 @@ public class GameSystem : MonoBehaviour {
             gameDuration -= Time.deltaTime;
         }
     }
+
+    IEnumerator LoadSceneDelayed(string level, float time, bool incremental = false)
+    {
+
+        yield return new WaitForSeconds(time);
+        fader.FadeToWhite();
+        SceneManager.LoadScene(level, incremental?LoadSceneMode.Additive : LoadSceneMode.Single);
+        yield return new WaitForSeconds(15);
+        fader.FadeToWhite();
+        SceneManager.UnloadScene(level);
+    }
 }
+
