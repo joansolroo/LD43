@@ -33,11 +33,13 @@ public class Ragdoll2D : MonoBehaviour
     {
         if (collision.relativeVelocity.magnitude > magnitudeThreshold)
         {
+            /*
             if (!sound.isPlaying)
             {
                 sound.pitch = Random.Range(1.1f, 1.4f);
                 sound.Play();
             }
+            */
             currentComboList.Add(ScoreType.Hit);
             Instantiate(hitParticle, collision.contacts[0].point, Quaternion.AngleAxis(Random.Range(-40, 40), new Vector3(0, 0, 1)));
             //Debug.Log("Combo (Aie!) : " + part.gameObject.name + "Combo Size : " + currentComboList.Count);
