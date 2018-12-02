@@ -50,6 +50,11 @@ public class Ragdoll2D : MonoBehaviour
         //TODO: handle hits
     }
 
+    void Start()
+    {
+        AddTorque(Random.Range(100f, 200f));
+    }
+
     bool grabbing = false;
     public bool down = false;
     private void Update()

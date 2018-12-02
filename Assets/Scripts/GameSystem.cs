@@ -88,16 +88,23 @@ public class GameSystem : MonoBehaviour {
         yield return new WaitForSeconds(15f);
         for (int i = 0; i < 3; i++)
         {
-            fader.FadeToWhite();
+           // fader.FadeToWhite();
             SceneManager.LoadScene(scenes[i], incremental ? LoadSceneMode.Additive : LoadSceneMode.Single);
+           
+            // fader.FadeToWhite();
             yield return new WaitForSeconds(scenesTime[i]);
-            fader.FadeToWhite();
+          //  fader.FadeIn();
             SceneManager.UnloadScene(scenes[i]);
-            fader.FadeToWhite();
+           // fader.FadeToWhite();
             SceneManager.LoadScene(transitionsScenes[i], incremental ? LoadSceneMode.Additive : LoadSceneMode.Single);
             yield return new WaitForSeconds(transitionTime[i]);
-            fader.FadeToWhite();
+          //  fader.FadeToWhite();
             SceneManager.UnloadScene(transitionsScenes[i]);
+            //sorry
+            if (i == 2)
+            {
+                i = -1;
+            }
         }
     }
 }

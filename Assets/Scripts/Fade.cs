@@ -41,7 +41,7 @@ public class Fade : MonoBehaviour
     public void FadeToWhite()
     {
         Color color = new Color(1, 1, 1, 1);
-        StartCoroutine(DoBlink(color, fadeWhiteTime));
+        StartCoroutine(DoFade(color, fadeWhiteTime));
         faded = fade = true;
     }
     bool fading = false;
