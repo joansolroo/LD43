@@ -24,12 +24,19 @@ public class Ragdoll2D : MonoBehaviour
 
     public List<ScoreType> currentComboList = new List<ScoreType>();
 
-    public float magnitudeThreshold = 5f; 
+    public float magnitudeThreshold = 5f;
+
+    [SerializeField] AudioSource sound;
 
     public void CollisionEnter(Ragdoll2DPart part, Collision2D collision)
     {
         if (collision.relativeVelocity.magnitude > magnitudeThreshold)
         {
+            if (!sound.isPlaying)
+            {
+                sound.pitch = Random.Range(1.1f, 1.4f);
+                sound.Play();
+            }
             currentComboList.Add(ScoreType.Hit);
             Instantiate(hitParticle, collision.contacts[0].point, Quaternion.identity);
             //Debug.Log("Combo (Aie!) : " + part.gameObject.name + "Combo Size : " + currentComboList.Count);
