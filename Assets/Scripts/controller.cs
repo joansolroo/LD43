@@ -62,6 +62,9 @@ public class controller : MonoBehaviour
 
     void ComputeInput()
     {
+
+        if (!ragdoll.head.attached)
+        { return; }
         //  Movement
         float translation = Input.GetAxis("Horizontal") * movementSpeed;
         translation *= Time.deltaTime;
