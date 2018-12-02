@@ -12,7 +12,7 @@ public class GameSystem : MonoBehaviour {
     public GameObject gameUI;
     public GameObject stopUI;
 
-    public Text scoreDisplay;
+    public Text timeDisplay;
     public Button retry, quit;
 
     // Use this for initialization
@@ -58,7 +58,8 @@ public class GameSystem : MonoBehaviour {
             gameUI.SetActive(false);
             stopUI.SetActive(true);
 
-            scoreDisplay.text = ((int)(player.GetComponent<controller>().score)).ToString();
+            timeDisplay.text = gameDuration.ToString();
+            //scoreDisplay.text = ((int)(player.GetComponent<controller>().score)).ToString();
         }
         else if (gameDuration >= 0.0f)
         {

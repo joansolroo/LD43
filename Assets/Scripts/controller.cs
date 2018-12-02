@@ -18,9 +18,22 @@ public class controller : MonoBehaviour
     private float prevVerticalPos;
 
     private bool previousGrounded = false;
-    public Text scoreDisplay;
 
+    [Header("UI display")]
+    public Text scoreDisplay;
+    public Text comboDisplay;
+    public Text actionDisplay;
+    [Space(10)]
+
+    /* public enum ScoreType
+        {
+            Hit,
+            LoseLimb,
+            HitObject
+        };
+     */
     public int[] comboPonderation;
+    public string lastEvent;
 
     [SerializeField] float mass = 50; // TODO: get from body
     // Use this for initialization
@@ -29,13 +42,17 @@ public class controller : MonoBehaviour
         score = 0.0f;
         //rb = GetComponent<Rigidbody2D>();
         prevVerticalPos = transform.position.y;
+        lastEvent = "";
     }
     
     void Update()
     {
         ComputeInput();
-
+        computeLastEvent();
         ComputeScore();
+
+        comboDisplay.text = getMultiplier().ToString();
+        actionDisplay.text = lastEvent;
     }
 
     public void Stop()
@@ -107,15 +124,20 @@ public class controller : MonoBehaviour
         prevVerticalPos = ragdoll.transform.position.y;
     }
 
-    public void AddCurrentCombo()
+    public int getMultiplier()
     {
         int multiplier = 0;
         foreach (ScoreType trick in ragdoll.currentComboList)
         {
             multiplier += 1 * comboPonderation[(int)trick];
         }
-        //Debug.Log("Multiplier : " + multiplier);
-        score += (int)currentScore * multiplier;
+        return multiplier;
+    }
+
+    public void AddCurrentCombo()
+    {
+        //Debug.Log("Multiplier : " + getMultiplier());
+        score += (int)currentScore * getMultiplier();
 
         if (scoreDisplay)
             scoreDisplay.text = score.ToString();
@@ -124,5 +146,26 @@ public class controller : MonoBehaviour
         ragdoll.currentComboList.Clear();
         currentScore = 0.0f;
         previousGrounded = true;
+    }
+
+    private void computeLastEvent()
+    {
+        if(ragdoll.currentComboList.Count < 1)
+        {
+            lastEvent = "";
+            return;
+        }
+
+        //for(int i=0; i<50; i++)
+        {
+            ScoreType a = ragdoll.currentComboList[ragdoll.currentComboList.Count - 1];
+            if (a == ScoreType.Hit)
+                lastEvent = "Hit";
+            else if (a == ScoreType.LoseLimb)
+                lastEvent = "LoseLimb";
+            else if (a == ScoreType.HitObject)
+                lastEvent = "HitObject";
+            else lastEvent = "";
+        }
     }
 }

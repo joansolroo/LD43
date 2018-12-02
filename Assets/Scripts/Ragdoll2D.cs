@@ -20,7 +20,9 @@ public class Ragdoll2D : MonoBehaviour
     public Ragdoll2DPart[] hands = new Ragdoll2DPart[2];
     public Ragdoll2DPart[] feet = new Ragdoll2DPart[2];
 
-    public ArrayList currentComboList = new ArrayList();
+    public GameObject hitParticle;
+
+    public List<ScoreType> currentComboList = new List<ScoreType>();
 
     public float magnitudeThreshold = 5f; 
 
@@ -29,6 +31,7 @@ public class Ragdoll2D : MonoBehaviour
         if (collision.relativeVelocity.magnitude > magnitudeThreshold)
         {
             currentComboList.Add(ScoreType.Hit);
+            Instantiate(hitParticle, collision.contacts[0].point, Quaternion.identity);
             //Debug.Log("Combo (Aie!) : " + part.gameObject.name + "Combo Size : " + currentComboList.Count);
         }
     }
