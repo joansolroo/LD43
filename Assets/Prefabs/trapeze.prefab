@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4106693474588208}
   - component: {fileID: 212701865276627186}
   - component: {fileID: 114895848391092742}
-  - component: {fileID: 114553077620059142}
   m_Layer: 0
   m_Name: trapeze
   m_TagString: Untagged
@@ -118,17 +117,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.64
---- !u!114 &114553077620059142
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1257920322584116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 740eab1370b7c6f46b849d11c3684e49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114895848391092742
 MonoBehaviour:
   m_ObjectHideFlags: 1
