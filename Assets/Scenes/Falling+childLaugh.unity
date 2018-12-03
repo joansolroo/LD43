@@ -1055,7 +1055,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 3895
+    m_Bits: 4096
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1111,20 +1111,20 @@ MonoBehaviour:
   retry: {fileID: 103101100}
   quit: {fileID: 298450721}
   scenes:
-  - Level3
   - Level2
+  - Level3
   - Level4
   transitionsScenes:
   - Falling
   - Falling+HiddenTrampo
   - Falling+HiddenTrampoClap
   scenesTime:
-  - 20
   - 35
+  - 20
   - 25
   transitionTime:
   - 12
-  - 10
+  - 5.5
   - 1e+11
   fader: {fileID: 2033821781}
   camera: {fileID: 0}
@@ -1200,7 +1200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 667763113}
-  background: {fileID: 0}
+  floor: {fileID: 0}
   threshold: 0
 --- !u!81 &1075238914
 AudioListener:
@@ -1536,6 +1536,11 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82234146307942082, guid: ec500e8ac7645c349b7aec08b7aa5e81,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec500e8ac7645c349b7aec08b7aa5e81, type: 2}

@@ -550,6 +550,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 331654375}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!4 &340585471 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4176313431593914, guid: eff98ada9a945ce46832212c58263033,
+    type: 2}
+  m_PrefabInternal: {fileID: 396389135}
 --- !u!1 &381344906
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,7 +642,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4176313431593914, guid: eff98ada9a945ce46832212c58263033, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -32.74
+      value: -102.7
       objectReference: {fileID: 0}
     - target: {fileID: 4176313431593914, guid: eff98ada9a945ce46832212c58263033, type: 2}
       propertyPath: m_LocalPosition.z
@@ -710,6 +715,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114952622128127642, guid: eff98ada9a945ce46832212c58263033,
+        type: 2}
+      propertyPath: floor
+      value: 
+      objectReference: {fileID: 1251138290}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff98ada9a945ce46832212c58263033, type: 2}
   m_IsPrefabAsset: 0
@@ -896,6 +906,91 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92ae8b97c11a2594b90f8d331bff06ee, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &568363977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 568363978}
+  - component: {fileID: 568363981}
+  - component: {fileID: 568363980}
+  - component: {fileID: 568363979}
+  m_Layer: 0
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &568363978
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 568363977}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 60, y: 60, z: 60}
+  m_Children: []
+  m_Father: {fileID: 340585471}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &568363979
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 568363977}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &568363980
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 568363977}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &568363981
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 568363977}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &644302509
 Prefab:
   m_ObjectHideFlags: 0
@@ -1449,6 +1544,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92ae8b97c11a2594b90f8d331bff06ee, type: 2}
   m_IsPrefabAsset: 0
+--- !u!4 &1251138290 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4703577671381028, guid: 3c026606e28019948ba099f4934e549e,
+    type: 2}
+  m_PrefabInternal: {fileID: 690454175}
 --- !u!1001 &1251865013
 Prefab:
   m_ObjectHideFlags: 0
@@ -1503,6 +1603,11 @@ Prefab:
       propertyPath: actionDisplay
       value: 
       objectReference: {fileID: 331654376}
+    - target: {fileID: 82234146307942082, guid: ec500e8ac7645c349b7aec08b7aa5e81,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec500e8ac7645c349b7aec08b7aa5e81, type: 2}
   m_IsPrefabAsset: 0

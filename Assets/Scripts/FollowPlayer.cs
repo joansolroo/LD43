@@ -5,12 +5,13 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour {
 
     public Transform player;
-    public Transform background;
+    public Transform floor;
 
     public float threshold;
+    Camera camera;
     // Use this for initialization
     void Start () {
-		
+        camera = GetComponent<Camera>();
 	}
 	
 	// Update is called once per frame
@@ -26,6 +27,14 @@ public class FollowPlayer : MonoBehaviour {
         if (d>threshold)
         {
             this.transform.position = this.transform.position + distance.normalized * (d- threshold/2) ;
+        }
+        
+        if(floor!=null && (transform.position.y-floor.transform.position.y - camera.orthographicSize) <0 )
+        {
+           // Debug.Log(transform.position.y - floor.transform.position.y - camera.orthographicSize);
+            Vector3 pos = transform.position;
+            pos.y = floor.transform.position.y+camera.orthographicSize;
+            transform.position = pos;
         }
         
     }

@@ -1030,11 +1030,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ragdoll: {fileID: 0}
-  ExcitementDecay: 1
+  ExcitementDecay: 3
   peopleSounds:
   - {fileID: 8300000, guid: 85e0826ffe537e747a7f5f72f43e8449, type: 3}
-  - {fileID: 8300000, guid: a2fcb5f99f841d04693cd03bd5e9ebcf, type: 3}
+  - {fileID: 8300000, guid: 1be2fa9443db9734cbdc32ed1b4c20fa, type: 3}
   - {fileID: 8300000, guid: 85e0826ffe537e747a7f5f72f43e8449, type: 3}
+  maxDistance: -1
+  excitement: 0
+  combo: 0
+  change: 0
 --- !u!114 &114426294096905628
 MonoBehaviour:
   m_ObjectHideFlags: 1

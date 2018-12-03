@@ -8,8 +8,27 @@ public class Public : MonoBehaviour {
     [SerializeField] Ragdoll2D ragdoll;
     [SerializeField] float ExcitementDecay = 1;
     [SerializeField] AudioClip[] peopleSounds;
+    [SerializeField] float maxDistance = -1;
     List<PublicMember> people = new List<PublicMember>();
     AudioSource source;
+
+        /// <summary>
+        /// Shuffles the element order of the specified list.
+        /// </summary>
+        public static void Shuffle<T>(List<T> ts)
+        {
+            var count = ts.Count;
+            var last = count - 1;
+            for (var i = 0; i < last; ++i)
+            {
+                var r = UnityEngine.Random.Range(i, count);
+                var tmp = ts[i];
+                ts[i] = ts[r];
+                ts[r] = tmp;
+            }
+        }
+
+
     // Use this for initialization
     void Start () {
         source = GetComponent<AudioSource>();
@@ -21,24 +40,34 @@ public class Public : MonoBehaviour {
                 people.Add(member);
             }
         }
+       Shuffle(people);
         excitement = 0;
         combo = 0;
     }
 
-    float excitement= 0;
-    int combo = 0;
-    int change = 0;
+    public float excitement= 0;
+    public int combo = 0;
+    public int change = 0;
     // Update is called once per frame
     void Update () {
+
+        Vector3 targetPos = ragdoll.center.transform.position;
+        targetPos.y = this.transform.position.y;
+        if (maxDistance>=0 && Vector3.Distance(targetPos, this.transform.position) > maxDistance)
+        {
+            this.transform.position = targetPos;
+        }
+        change = 0;
         if (ragdoll.currentComboList.Count != combo)
         {
             change = Mathf.Max(0, ragdoll.currentComboList.Count-combo);
             combo = ragdoll.currentComboList.Count;
             excitement += change;
         }
-        if(combo == 0)
+        
+        if(change == 0)
         {
-            excitement-= Time.deltaTime* ExcitementDecay;
+            excitement= Mathf.Max(0, excitement-Time.deltaTime* ExcitementDecay);
         }
 
         if (change > 1)

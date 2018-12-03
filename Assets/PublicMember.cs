@@ -10,7 +10,7 @@ public class PublicMember : MonoBehaviour {
     [SerializeField] bool visible;
 	// Use this for initialization
 	void Start () {
-        initialPos = transform.position;
+        initialPos = transform.localPosition;
         initialOffset = Random.RandomRange(0, 10);
         t = initialOffset;
     }
@@ -22,12 +22,12 @@ public class PublicMember : MonoBehaviour {
         if (visible)
         {
             t += Time.deltaTime;
-            this.transform.position = Vector3.MoveTowards(this.transform.position, initialPos + new Vector3(0, (1 + Mathf.Cos(t * happiness)) * 0.5f * happiness), happiness*5 * Time.deltaTime);
+            this.transform.localPosition = Vector3.MoveTowards(this.transform.localPosition, initialPos + new Vector3(0, (1 + Mathf.Cos(t * happiness)) * 0.5f * happiness), happiness*5 * Time.deltaTime);
             this.transform.eulerAngles = new Vector3(0, 0, Mathf.Sin(t * happiness) * 15);
         }
         else
         {
-            this.transform.position = Vector3.MoveTowards(this.transform.position, initialPos + new Vector3(0, -10,0),2);
+            this.transform.localPosition = Vector3.MoveTowards(this.transform.localPosition, initialPos + new Vector3(0, -10,0),2);
         }
 	}
 }
