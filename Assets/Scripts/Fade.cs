@@ -15,17 +15,17 @@ public class Fade : MonoBehaviour
     public bool fade = false;
     public bool white = false;
     private void Update()
-    {
+    {/*
         if (!fading &&faded != fade)
         {
             if (fade) {
-                if (white) FadeToWhite(); else FadeToBlack();
+                if (white) FadeToWhite(fadeWhiteTime); else FadeToBlack(fadeBlackTime);
             }
-            else FadeIn();
+            else FadeIn(fadeInTime);
             
-        }
+        }*/
     }
-    public float FadeIn()
+    public float FadeIn(float fadeInTime)
     {
         Color color = FadeGround.color;
         color.a = 0;
@@ -35,7 +35,7 @@ public class Fade : MonoBehaviour
         return fadeInTime;
     }
 
-    public float FadeToBlack()
+    public float FadeToBlack(float fadeBlackTime)
     {
         Color color = new Color(0, 0, 0, 1);
         StartCoroutine(DoFade(color, fadeBlackTime));
@@ -43,7 +43,7 @@ public class Fade : MonoBehaviour
         faded = fade;
         return fadeBlackTime;
     }
-    public float FadeToWhite()
+    public float FadeToWhite(float fadeWhiteTime)
     {
         Color color = new Color(1, 1, 1, 1);
         StartCoroutine(DoFade(color, fadeWhiteTime));
@@ -61,7 +61,7 @@ public class Fade : MonoBehaviour
             while (t < fadeTime)
             {
                 FadeGround.color = Color.Lerp(FadeGround.color, fadeColor, t / fadeTime);
-                t += Time.deltaTime/60;
+                t += Time.deltaTime;
                 yield return new WaitForEndOfFrame();
             }
             FadeGround.color = fadeColor;
@@ -81,7 +81,7 @@ public class Fade : MonoBehaviour
                 yield return new WaitForEndOfFrame();
             }
             fading = false;
-            FadeIn();
+            FadeIn(fadeTime);
         }
     }
 }

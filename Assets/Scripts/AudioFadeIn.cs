@@ -8,12 +8,16 @@ public class AudioFadeIn : MonoBehaviour {
     [SerializeField] float delay;
     [SerializeField] float time;
     [SerializeField] AnimationCurve fade;
+    float volume;
     // Use this for initialization
     void Start () {
 
         source = GetComponent<AudioSource>();
+        volume = source.volume;
         source.volume = 0;
+        
         StartCoroutine(DoFadeIn(time,delay));
+
     }
 	
     IEnumerator DoFadeIn(float time, float delay = 0)
@@ -26,7 +30,7 @@ public class AudioFadeIn : MonoBehaviour {
 
             t += Time.deltaTime;
             yield return new WaitForEndOfFrame();
-            source.volume = fade.Evaluate(t / time);
+            source.volume = volume*fade.Evaluate(t / time);
         }
     }
 }

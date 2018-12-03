@@ -41,7 +41,7 @@ public class BouncySurface : MonoBehaviour
             collision.rigidbody.AddForce(v * bounciness * collision.rigidbody.mass);
             Debug.DrawLine(collision.contacts[0].point, collision.contacts[0].point + v * 0.1f);
         }
-        StartCoroutine(BouncyAnimation(Mathf.Lerp(0.05f, 0.10f, speed*speed), Mathf.Lerp(1, 0.75f, speed * speed)));
+        //StartCoroutine(BouncyAnimation(Mathf.Lerp(0.05f, 0.10f, speed*speed), Mathf.Lerp(1, 0.75f, speed * speed)));
         //Debug.LogError("qshk");
     }
     bool animating = false;

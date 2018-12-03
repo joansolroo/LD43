@@ -34,7 +34,7 @@ public class GameSystem : MonoBehaviour {
 
         quit.onClick.AddListener(QuitGame);
         retry.onClick.AddListener(RetryLevel);
-        fader.FadeIn();
+        fader.FadeIn(8);
         StartCoroutine(LoadSceneDelayed(true));
         camera = Camera.main;
     }
@@ -89,14 +89,23 @@ public class GameSystem : MonoBehaviour {
         yield return new WaitForSeconds(15f);
         for (int i = 0; i < 3; i++)
         {
-            yield return new WaitForSeconds(fader.FadeToWhite());
+            fader.FadeToWhite(0.25f);
+            yield return new WaitForSeconds(0.3f);
+            camera.enabled = false;
+            Quaternion r = Ragdoll2D.ragdolls[0].center.transform.rotation;
             SceneManager.LoadScene(scenes[i], incremental ? LoadSceneMode.Additive : LoadSceneMode.Single);
+           
+            fader.FadeIn(0.25f);
             //camera.GetComponent<FollowPlayer>().player = Ragdoll2D.ragdolls[Ragdoll2D.ragdolls.Count - 1].center.transform;
             // fader.FadeToWhite();
             yield return new WaitForSeconds(scenesTime[i]);
-          //  fader.FadeIn();
+            //  fader.FadeIn(); 
+            fader.FadeToBlack(0.5f);
+            yield return new WaitForSeconds(0.5f);
             SceneManager.UnloadScene(scenes[i]);
-           // fader.FadeToWhite();
+            camera.enabled = true;
+            fader.FadeIn(2f);
+            // fader.FadeToWhite();
             SceneManager.LoadScene(transitionsScenes[i], incremental ? LoadSceneMode.Additive : LoadSceneMode.Single);
             yield return new WaitForSeconds(transitionTime[i]);
           //  fader.FadeToWhite();

@@ -18,6 +18,7 @@ public class PublicMember : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
+        visible = happiness > 0.5f;
         if (visible)
         {
             t += Time.deltaTime;
