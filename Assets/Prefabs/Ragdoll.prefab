@@ -656,7 +656,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1718272800772754}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -163.59, y: -57.2, z: -0.034537725}
+  m_LocalPosition: {x: -163.59, y: -98.01, z: -0.034537725}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 4493722984089510}
@@ -1730,8 +1730,8 @@ MonoBehaviour:
   RB2D: {fileID: 0}
   attached: 1
   sticky: 0
-  health: 100
-  armor: 30
+  health: 70
+  armor: 0
 --- !u!114 &114088695477107718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1747,8 +1747,8 @@ MonoBehaviour:
   RB2D: {fileID: 0}
   attached: 1
   sticky: 0
-  health: 100
-  armor: 30
+  health: 70
+  armor: 0
 --- !u!114 &114105001553571230
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1764,8 +1764,8 @@ MonoBehaviour:
   RB2D: {fileID: 0}
   attached: 1
   sticky: 0
-  health: 100
-  armor: 30
+  health: 70
+  armor: 0
 --- !u!114 &114109515063763752
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1781,8 +1781,8 @@ MonoBehaviour:
   RB2D: {fileID: 0}
   attached: 1
   sticky: 0
-  health: 1
-  armor: 20
+  health: 70
+  armor: 0
 --- !u!114 &114113720246793766
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1798,8 +1798,8 @@ MonoBehaviour:
   RB2D: {fileID: 0}
   attached: 1
   sticky: 0
-  health: 100
-  armor: 30
+  health: 70
+  armor: 0
 --- !u!114 &114122305022271616
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1815,8 +1815,8 @@ MonoBehaviour:
   RB2D: {fileID: 0}
   attached: 1
   sticky: 0
-  health: 100
-  armor: 30
+  health: 70
+  armor: 0
 --- !u!114 &114188037810342684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1837,7 +1837,10 @@ MonoBehaviour:
   feet:
   - {fileID: 114067977509506774}
   - {fileID: 114113720246793766}
-  hitParticle: {fileID: 0}
+  hitParticle: {fileID: 1231876193078278, guid: ff18438fe3bfc4043b6d7426bad5d5d2,
+    type: 2}
+  ouchParticle: {fileID: 1038034622587012, guid: 5b59721b2f4250741a485b53ebb92c09,
+    type: 2}
   currentComboList: 
   magnitudeThreshold: 50
   sound: {fileID: 82234146307942082}
@@ -1857,8 +1860,8 @@ MonoBehaviour:
   RB2D: {fileID: 0}
   attached: 1
   sticky: 0
-  health: 100
-  armor: 30
+  health: 70
+  armor: 0
 --- !u!114 &114349730947277360
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1874,8 +1877,8 @@ MonoBehaviour:
   RB2D: {fileID: 0}
   attached: 1
   sticky: 0
-  health: 100
-  armor: 30
+  health: 70
+  armor: 0
 --- !u!114 &114358830625031612
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1891,8 +1894,8 @@ MonoBehaviour:
   RB2D: {fileID: 0}
   attached: 1
   sticky: 0
-  health: 100
-  armor: 30
+  health: 70
+  armor: 0
 --- !u!114 &114415015693679804
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1908,8 +1911,8 @@ MonoBehaviour:
   RB2D: {fileID: 0}
   attached: 1
   sticky: 0
-  health: 100
-  armor: 30
+  health: 70
+  armor: 0
 --- !u!114 &114468164319055186
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1925,8 +1928,8 @@ MonoBehaviour:
   RB2D: {fileID: 0}
   attached: 1
   sticky: 0
-  health: 100
-  armor: 30
+  health: 70
+  armor: 0
 --- !u!114 &114483293384482308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1942,8 +1945,8 @@ MonoBehaviour:
   RB2D: {fileID: 0}
   attached: 1
   sticky: 0
-  health: 100
-  armor: 30
+  health: 70
+  armor: 0
 --- !u!114 &114704052227235850
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1959,8 +1962,8 @@ MonoBehaviour:
   RB2D: {fileID: 0}
   attached: 1
   sticky: 0
-  health: 100
-  armor: 30
+  health: 70
+  armor: 0
 --- !u!114 &114751162232600348
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1976,8 +1979,8 @@ MonoBehaviour:
   RB2D: {fileID: 0}
   attached: 1
   sticky: 0
-  health: 100
-  armor: 30
+  health: 70
+  armor: 0
 --- !u!114 &114778800010519188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1993,8 +1996,8 @@ MonoBehaviour:
   RB2D: {fileID: 0}
   attached: 1
   sticky: 0
-  health: 100
-  armor: 30
+  health: 70
+  armor: 0
 --- !u!114 &114780689054591234
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2010,8 +2013,8 @@ MonoBehaviour:
   RB2D: {fileID: 0}
   attached: 1
   sticky: 0
-  health: 100
-  armor: 50
+  health: 70
+  armor: 0
 --- !u!114 &114896790620615878
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2051,8 +2054,8 @@ MonoBehaviour:
   RB2D: {fileID: 0}
   attached: 1
   sticky: 0
-  health: 100
-  armor: 30
+  health: 70
+  armor: 0
 --- !u!114 &114984510788559268
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2068,8 +2071,8 @@ MonoBehaviour:
   RB2D: {fileID: 0}
   attached: 1
   sticky: 0
-  health: 100
-  armor: 50
+  health: 70
+  armor: 0
 --- !u!212 &212031076590852210
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -2704,7 +2707,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.5283019, g: 0.5283019, b: 0.5283019, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2750,7 +2753,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.49056602, g: 0.49056602, b: 0.49056602, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3096,7 +3099,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.002626419, y: 0.06627107}
-  m_ConnectedAnchor: {x: 0.002625963, y: -0.06620061}
+  m_ConnectedAnchor: {x: 0.002625963, y: -0.06620131}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -3119,7 +3122,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.02685301, y: 0.045171354}
-  m_ConnectedAnchor: {x: -0.015328916, y: -0.076986685}
+  m_ConnectedAnchor: {x: -0.015328916, y: -0.076986335}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -3165,7 +3168,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.002626419, y: 0.06627107}
-  m_ConnectedAnchor: {x: 0.0036621094, y: -0.07529583}
+  m_ConnectedAnchor: {x: 0.0036621094, y: -0.07529602}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -3188,7 +3191,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: -0.06}
-  m_ConnectedAnchor: {x: 0.0066668275, y: 0.07521732}
+  m_ConnectedAnchor: {x: 0.006665556, y: 0.07521732}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -3211,7 +3214,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: -0.00034562094, y: 0.052237317}
-  m_ConnectedAnchor: {x: 0.006344964, y: 0.07037881}
+  m_ConnectedAnchor: {x: 0.006347507, y: 0.07037881}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -3234,7 +3237,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.002626419, y: 0.06627107}
-  m_ConnectedAnchor: {x: 0.0026283264, y: -0.06622754}
+  m_ConnectedAnchor: {x: 0.0026283264, y: -0.06622789}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -3257,7 +3260,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.02685301, y: 0.045171354}
-  m_ConnectedAnchor: {x: -0.007499695, y: -0.0772399}
+  m_ConnectedAnchor: {x: -0.007499695, y: -0.07723954}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -3280,7 +3283,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: -0.06}
-  m_ConnectedAnchor: {x: 0.0066717463, y: 0.075217314}
+  m_ConnectedAnchor: {x: 0.0066704745, y: 0.075217314}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -3395,7 +3398,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.002626419, y: 0.06627107}
-  m_ConnectedAnchor: {x: 0.01712494, y: -0.07877312}
+  m_ConnectedAnchor: {x: 0.01712494, y: -0.07877274}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -3418,7 +3421,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.002626419, y: 0.06627107}
-  m_ConnectedAnchor: {x: 0.067913815, y: -0.06198845}
+  m_ConnectedAnchor: {x: 0.067913815, y: -0.061988067}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -3441,7 +3444,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: -0.06}
-  m_ConnectedAnchor: {x: -0.06930389, y: 0.051999856}
+  m_ConnectedAnchor: {x: -0.06930389, y: 0.052000046}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
@@ -3464,7 +3467,7 @@ HingeJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: -0.07}
-  m_ConnectedAnchor: {x: -0.0009994507, y: 0.08849983}
+  m_ConnectedAnchor: {x: -0.0009994507, y: 0.08850022}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 0
