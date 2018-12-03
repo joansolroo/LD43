@@ -89,7 +89,7 @@ public class GameSystem : MonoBehaviour {
 
         yield return new WaitForSeconds(15f);
         fader.FadeToWhite(0.25f);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.26f);
         camera.enabled = false;
 
         for (int i = 0; i < 4; i++)
@@ -101,7 +101,7 @@ public class GameSystem : MonoBehaviour {
             yield return new WaitForSeconds(scenesTime[i]);
 
             fader.FadeToBlack(0.5f);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.51f);
             SceneManager.LoadScene(transitionsScenes[i], incremental ? LoadSceneMode.Additive : LoadSceneMode.Single);
             SceneManager.UnloadScene(scenes[i]);
             fader.FadeIn(2f);
@@ -109,7 +109,7 @@ public class GameSystem : MonoBehaviour {
             yield return new WaitForSeconds(transitionTime[i]);
 
             fader.FadeToWhite(0.5f);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.51f);
             SceneManager.UnloadScene(transitionsScenes[i]);
             //sorry
             if (i==transitionsScenes.Length-1)
