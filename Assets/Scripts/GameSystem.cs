@@ -89,14 +89,14 @@ public class GameSystem : MonoBehaviour {
 
         yield return new WaitForSeconds(15f);
         fader.FadeToWhite(0.25f);
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.5f);
         camera.enabled = false;
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 4; i++)
         {
             
             SceneManager.LoadScene(scenes[i], incremental ? LoadSceneMode.Additive : LoadSceneMode.Single);
-            fader.FadeIn(0.25f);
+            fader.FadeIn(1f);
 
             yield return new WaitForSeconds(scenesTime[i]);
 

@@ -1293,7 +1293,7 @@ Prefab:
     - target: {fileID: 198770676826647690, guid: 001f6f75840733047a040930858e8a6b,
         type: 2}
       propertyPath: InitialModule.maxNumParticles
-      value: 1000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 198770676826647690, guid: 001f6f75840733047a040930858e8a6b,
         type: 2}

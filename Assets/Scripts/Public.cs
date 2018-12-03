@@ -97,7 +97,7 @@ public class Public : MonoBehaviour {
             AudioClip clip = peopleSounds[idx];
             lastOne = idx;
             
-            source.PlayOneShot(clip, Random.Range(0.2f, 0.5f));
+            source.PlayOneShot(clip, Random.Range(0.15f, 0.3f));
             yield return new WaitForSeconds(0.25f);
             justLaugh = false;
             yield return new WaitForSeconds(clip.length-0.25f);
