@@ -201,6 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   happiness: 5
+  visible: 0
 --- !u!1001 &14914340
 Prefab:
   m_ObjectHideFlags: 0
@@ -335,6 +336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   happiness: 5
+  visible: 0
 --- !u!1 &62868868
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,6 +425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   happiness: 5
+  visible: 0
 --- !u!1 &79438203
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,6 +514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   happiness: 5
+  visible: 0
 --- !u!1 &87607212
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,6 +603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   happiness: 5
+  visible: 0
 --- !u!1 &103101098
 GameObject:
   m_ObjectHideFlags: 0
@@ -1124,6 +1129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   happiness: 5
+  visible: 0
 --- !u!1 &381344906
 GameObject:
   m_ObjectHideFlags: 0
@@ -1281,6 +1287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   happiness: 5
+  visible: 0
 --- !u!1001 &514530908
 Prefab:
   m_ObjectHideFlags: 0
@@ -1732,6 +1739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   happiness: 5
+  visible: 0
 --- !u!4 &667763113 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4493722984089510, guid: ec500e8ac7645c349b7aec08b7aa5e81,
@@ -1747,7 +1755,7 @@ GameObject:
   - component: {fileID: 671564892}
   - component: {fileID: 671564894}
   m_Layer: 0
-  m_Name: public-3 (8)
+  m_Name: public
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1760,11 +1768,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 671564891}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.699997, y: -11.5, z: 0}
-  m_LocalScale: {x: 200, y: 5, z: 5}
+  m_LocalPosition: {x: -165.42448, y: -158.3, z: 210.64062}
+  m_LocalScale: {x: 200, y: 38.41, z: 5}
   m_Children: []
-  m_Father: {fileID: 1821687522}
-  m_RootOrder: 24
+  m_Father: {fileID: 0}
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &671564894
 SpriteRenderer:
@@ -1952,6 +1960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   happiness: 5
+  visible: 0
 --- !u!1 &754217370
 GameObject:
   m_ObjectHideFlags: 0
@@ -2157,6 +2166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   happiness: 5
+  visible: 0
 --- !u!1 &795616267
 GameObject:
   m_ObjectHideFlags: 0
@@ -2245,6 +2255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   happiness: 5
+  visible: 0
 --- !u!1001 &883294375
 Prefab:
   m_ObjectHideFlags: 0
@@ -2823,6 +2834,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   happiness: 5
+  visible: 0
 --- !u!1 &1158701511
 GameObject:
   m_ObjectHideFlags: 0
@@ -2911,6 +2923,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   happiness: 5
+  visible: 0
 --- !u!1001 &1171847586
 Prefab:
   m_ObjectHideFlags: 0
@@ -3713,6 +3726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   happiness: 5
+  visible: 0
 --- !u!1 &1534122840 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1718272800772754, guid: ec500e8ac7645c349b7aec08b7aa5e81,
@@ -3910,6 +3924,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   happiness: 5
+  visible: 0
 --- !u!1 &1646013206
 GameObject:
   m_ObjectHideFlags: 0
@@ -3998,6 +4013,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   happiness: 5
+  visible: 0
 --- !u!1001 &1646459533
 Prefab:
   m_ObjectHideFlags: 0
@@ -4132,6 +4148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   happiness: 5
+  visible: 0
 --- !u!1 &1684840210
 GameObject:
   m_ObjectHideFlags: 0
@@ -4261,6 +4278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   happiness: 5
+  visible: 0
 --- !u!114 &1745577501 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114967178267523746, guid: 4784a30d6c263db4a9fffd7f50c9ed9e,
@@ -4355,6 +4373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   happiness: 5
+  visible: 0
 --- !u!1 &1809174583
 GameObject:
   m_ObjectHideFlags: 0
@@ -6051,6 +6070,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   happiness: 5
+  visible: 0
 --- !u!1 &1821687521
 GameObject:
   m_ObjectHideFlags: 0
@@ -6060,7 +6080,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1821687522}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: People
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6072,7 +6092,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1821687521}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -169.12448, y: -124.977806, z: 210.64062}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6100,7 +6120,6 @@ Transform:
   - {fileID: 1686322295}
   - {fileID: 1098603428}
   - {fileID: 1158701512}
-  - {fileID: 671564892}
   m_Father: {fileID: 0}
   m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6238,6 +6257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   happiness: 5
+  visible: 0
 --- !u!1 &2010068540
 GameObject:
   m_ObjectHideFlags: 0
@@ -6326,6 +6346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   happiness: 5
+  visible: 0
 --- !u!1001 &2024874030
 Prefab:
   m_ObjectHideFlags: 0
@@ -6460,6 +6481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   happiness: 5
+  visible: 0
 --- !u!1 &2097318643
 GameObject:
   m_ObjectHideFlags: 0
@@ -6548,6 +6570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   happiness: 5
+  visible: 0
 --- !u!1001 &2112778715
 Prefab:
   m_ObjectHideFlags: 0
