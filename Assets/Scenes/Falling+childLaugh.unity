@@ -991,7 +991,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 092d3b49b48786b4380b7e2b1410a4c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 10
+  delay: 4.5
+  time: 5
   fade:
     serializedVersion: 2
     m_Curve:
@@ -1789,7 +1790,7 @@ Prefab:
     - target: {fileID: 82989125557600196, guid: 92ae8b97c11a2594b90f8d331bff06ee,
         type: 2}
       propertyPath: m_PlayOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 212622565310796018, guid: 92ae8b97c11a2594b90f8d331bff06ee,
         type: 2}

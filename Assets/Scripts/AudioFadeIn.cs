@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class AudioFadeIn : MonoBehaviour {
     AudioSource source;
+    [SerializeField] float delay;
     [SerializeField] float time;
     [SerializeField] AnimationCurve fade;
     // Use this for initialization
@@ -12,11 +13,13 @@ public class AudioFadeIn : MonoBehaviour {
 
         source = GetComponent<AudioSource>();
         source.volume = 0;
-        StartCoroutine(DoFadeIn());
+        StartCoroutine(DoFadeIn(time,delay));
     }
 	
-    IEnumerator DoFadeIn()
+    IEnumerator DoFadeIn(float time, float delay = 0)
     {
+        yield return new WaitForSeconds(delay);
+        source.Play();
         float t = 0;
         while (t < time)
         {
