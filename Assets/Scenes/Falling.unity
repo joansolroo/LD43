@@ -871,6 +871,7 @@ MonoBehaviour:
   scenesTime: []
   transitionTime: []
   fader: {fileID: 0}
+  camera: {fileID: 0}
 --- !u!4 &1057303782
 Transform:
   m_ObjectHideFlags: 0
@@ -1312,12 +1313,37 @@ Prefab:
     - target: {fileID: 114373971125459968, guid: eff98ada9a945ce46832212c58263033,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 81348733741929728, guid: eff98ada9a945ce46832212c58263033,
         type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114373971125459968, guid: eff98ada9a945ce46832212c58263033,
+        type: 2}
+      propertyPath: faded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114373971125459968, guid: eff98ada9a945ce46832212c58263033,
+        type: 2}
+      propertyPath: fade
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114781803240159096, guid: eff98ada9a945ce46832212c58263033,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114373971125459968, guid: eff98ada9a945ce46832212c58263033,
+        type: 2}
+      propertyPath: fadeInTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114373971125459968, guid: eff98ada9a945ce46832212c58263033,
+        type: 2}
+      propertyPath: fadeWhiteTime
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eff98ada9a945ce46832212c58263033, type: 2}
@@ -1369,7 +1395,7 @@ Prefab:
     - target: {fileID: 114131987945371376, guid: 001f6f75840733047a040930858e8a6b,
         type: 2}
       propertyPath: speed
-      value: 120
+      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 001f6f75840733047a040930858e8a6b, type: 2}

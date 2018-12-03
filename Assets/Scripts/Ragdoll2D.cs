@@ -29,6 +29,16 @@ public class Ragdoll2D : MonoBehaviour
 
     [SerializeField] AudioSource sound;
 
+    public static List<Ragdoll2D> ragdolls = new List<Ragdoll2D>();
+    private void OnEnable()
+    {
+        ragdolls.Add(this);
+    }
+    private void OnDisable()
+    {
+        ragdolls[0].transform.rotation = this.transform.rotation;
+        ragdolls.Remove(this);
+    }
     public void CollisionEnter(Ragdoll2DPart part, Collision2D collision)
     {
         if (collision.relativeVelocity.magnitude > magnitudeThreshold)
@@ -63,7 +73,11 @@ public class Ragdoll2D : MonoBehaviour
     {
         if (init)
         {
-            AddTorque(Random.Range(100f, 200f));
+            if (ragdolls.Count > 1)
+            {
+                this.transform.rotation = ragdolls[ragdolls.Count - 2].transform.rotation;
+            }
+            AddTorque(-Random.Range(100f, 200f));
             init = false;
         }
         float pushForce = 20 * Mass;

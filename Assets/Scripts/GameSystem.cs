@@ -25,7 +25,7 @@ public class GameSystem : MonoBehaviour {
     private int index = 0;
     public Fade fader;
 
-
+    public Camera camera;
     // Use this for initialization
     void Start() {
         pause = false;
@@ -36,6 +36,7 @@ public class GameSystem : MonoBehaviour {
         retry.onClick.AddListener(RetryLevel);
         fader.FadeIn();
         StartCoroutine(LoadSceneDelayed(true));
+        camera = Camera.main;
     }
 
     void QuitGame()
@@ -88,9 +89,9 @@ public class GameSystem : MonoBehaviour {
         yield return new WaitForSeconds(15f);
         for (int i = 0; i < 3; i++)
         {
-           // fader.FadeToWhite();
+            yield return new WaitForSeconds(fader.FadeToWhite());
             SceneManager.LoadScene(scenes[i], incremental ? LoadSceneMode.Additive : LoadSceneMode.Single);
-           
+            //camera.GetComponent<FollowPlayer>().player = Ragdoll2D.ragdolls[Ragdoll2D.ragdolls.Count - 1].center.transform;
             // fader.FadeToWhite();
             yield return new WaitForSeconds(scenesTime[i]);
           //  fader.FadeIn();

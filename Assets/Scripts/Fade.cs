@@ -22,27 +22,34 @@ public class Fade : MonoBehaviour
                 if (white) FadeToWhite(); else FadeToBlack();
             }
             else FadeIn();
+            
         }
     }
-    public void FadeIn()
+    public float FadeIn()
     {
         Color color = FadeGround.color;
         color.a = 0;
         StartCoroutine(DoFade(color, fadeInTime));
-        faded = fade = false;
+        fade = false;
+        faded = fade;
+        return fadeInTime;
     }
 
-    public void FadeToBlack()
+    public float FadeToBlack()
     {
         Color color = new Color(0, 0, 0, 1);
         StartCoroutine(DoFade(color, fadeBlackTime));
-        faded = fade = true;
+        fade = true;
+        faded = fade;
+        return fadeBlackTime;
     }
-    public void FadeToWhite()
+    public float FadeToWhite()
     {
         Color color = new Color(1, 1, 1, 1);
         StartCoroutine(DoFade(color, fadeWhiteTime));
-        faded = fade = true;
+        fade = true;
+        faded = fade;
+        return fadeWhiteTime;
     }
     bool fading = false;
     IEnumerator DoFade(Color fadeColor, float fadeTime)
@@ -54,9 +61,10 @@ public class Fade : MonoBehaviour
             while (t < fadeTime)
             {
                 FadeGround.color = Color.Lerp(FadeGround.color, fadeColor, t / fadeTime);
-                t += Time.deltaTime;
+                t += Time.deltaTime/60;
                 yield return new WaitForEndOfFrame();
             }
+            FadeGround.color = fadeColor;
             fading = false;
         }
     }
