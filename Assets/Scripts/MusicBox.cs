@@ -10,7 +10,7 @@ public class MusicBox : MonoBehaviour
     [SerializeField] AudioClip[] notes;
     [SerializeField] float speed = 60;
     [SerializeField] float volume = 0.5f;
-
+    [SerializeField] int emissionRate = 1;
     // Use this for initialization
     void Start()
     {
@@ -41,7 +41,7 @@ public class MusicBox : MonoBehaviour
 
             source.PlayOneShot(notes[Random.Range(0, notes.Length)], volume);
             
-            system.Emit(1);
+            system.Emit(emissionRate);
             yield return new WaitForSeconds(1f/speed*60);
         }
     }

@@ -15,7 +15,7 @@ public class ForceGenerator : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Ragdoll2DPart RDpart = collision.gameObject.GetComponent<Ragdoll2DPart>();
-        if (RDpart != null)
+        if (RDpart != null && RDpart.attached)
         {
             StartCoroutine(LaunchWithDelay(RDpart.ragdoll));
         }

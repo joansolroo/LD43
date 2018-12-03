@@ -1111,18 +1111,22 @@ MonoBehaviour:
   retry: {fileID: 103101100}
   quit: {fileID: 298450721}
   scenes:
+  - Level1
   - Level2
   - Level3
   - Level4
   transitionsScenes:
+  - Falling+ok
   - Falling
   - Falling+HiddenTrampo
   - Falling+HiddenTrampoClap
   scenesTime:
+  - 25
   - 35
   - 20
   - 25
   transitionTime:
+  - 12
   - 12
   - 5.5
   - 1e+11
@@ -1209,7 +1213,7 @@ AudioListener:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1075238911}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1075238915
 Camera:
   m_ObjectHideFlags: 0

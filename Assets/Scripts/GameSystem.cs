@@ -105,13 +105,14 @@ public class GameSystem : MonoBehaviour {
             SceneManager.LoadScene(transitionsScenes[i], incremental ? LoadSceneMode.Additive : LoadSceneMode.Single);
             SceneManager.UnloadScene(scenes[i]);
             fader.FadeIn(2f);
+
             yield return new WaitForSeconds(transitionTime[i]);
 
             fader.FadeToWhite(0.5f);
             yield return new WaitForSeconds(0.5f);
             SceneManager.UnloadScene(transitionsScenes[i]);
             //sorry
-            if (i == 2)
+            if (i==transitionsScenes.Length-1)
             {
                 i = -1;
             }

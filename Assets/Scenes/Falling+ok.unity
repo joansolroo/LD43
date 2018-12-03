@@ -1345,6 +1345,11 @@ Prefab:
       propertyPath: m_ReverbPreset
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 114131987945371376, guid: 001f6f75840733047a040930858e8a6b,
+        type: 2}
+      propertyPath: emissionRate
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 001f6f75840733047a040930858e8a6b, type: 2}
   m_IsPrefabAsset: 0

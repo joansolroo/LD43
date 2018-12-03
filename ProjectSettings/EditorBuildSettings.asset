@@ -17,25 +17,31 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Falling+childLaugh.unity
     guid: ae9882ac4c916ff4e822136de945a938
-  - enabled: 1
-    path: Assets/Scenes/Level1.unity
+  - enabled: 0
+    path: Assets/Scenes/Level1-old.unity
     guid: e247a9ec2b0440a40b481440809985ba
   - enabled: 1
-    path: Assets/Scenes/Falling.unity
-    guid: 38d25b545e5ec60479248750a6595077
+    path: Assets/Scenes/Level1.unity
+    guid: 6d6be707457516440804635ce087fd1a
+  - enabled: 1
+    path: Assets/Scenes/Falling+ok.unity
+    guid: 648653c25688d17449b4b88b63afc62c
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: c31e354b052db134aa14d38c9be092db
   - enabled: 1
+    path: Assets/Scenes/Falling.unity
+    guid: 38d25b545e5ec60479248750a6595077
+  - enabled: 1
     path: Assets/Scenes/Level3.unity
     guid: 8f094ed338932cc4c9d02bb547dbb9b9
-  - enabled: 1
-    path: Assets/Scenes/Falling+HiddenTrampoClap.unity
-    guid: cb9799b2b1d9bc34084682de48e6654c
   - enabled: 1
     path: Assets/Scenes/Falling+HiddenTrampo.unity
     guid: eceffc40c1e773447aa162dc6322c408
   - enabled: 1
     path: Assets/Scenes/Level4.unity
     guid: e82295cdc942a014491408c5bae4c51c
+  - enabled: 1
+    path: Assets/Scenes/Falling+HiddenTrampoClap.unity
+    guid: cb9799b2b1d9bc34084682de48e6654c
   m_configObjects: {}
