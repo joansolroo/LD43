@@ -10,15 +10,23 @@ public class HelpShower : MonoBehaviour {
     [SerializeField] Transform up;
     [SerializeField] Transform left;
     [SerializeField] Transform right;
+    [SerializeField] Transform hands;
+    [SerializeField] Transform feet;
 
     [SerializeField] SpriteRenderer upInfo;
     [SerializeField] SpriteRenderer leftInfo;
     [SerializeField] SpriteRenderer rightInfo;
+    [SerializeField] SpriteRenderer handsInfo;
+    [SerializeField] SpriteRenderer feetInfo;
 
     Vector3 upPos;
+    Vector3 handsPos;
+    Vector3 feetPos;
     // Use this for initialization
     void Start () {
         upPos = up.localPosition;
+        handsPos = hands.localPosition;
+        feetPos = feet.localPosition;
         StartCoroutine(StopAfter(duration));
 	}
 	
@@ -28,6 +36,7 @@ public class HelpShower : MonoBehaviour {
         transform.eulerAngles = new Vector3(0,0,Mathf.Sin(Time.time)*5);
 
         float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
         if (h < 0)
         {
             left.localRotation = Quaternion.RotateTowards(left.localRotation, Quaternion.Euler(0, 0, 20), 1);
@@ -56,6 +65,27 @@ public class HelpShower : MonoBehaviour {
         {
             up.localPosition = Vector3.MoveTowards(up.localPosition, upPos, 1f);
             upInfo.color = new Color(0, 0, 0, 0);
+        }
+
+        if (v>0)
+        {
+            hands.localPosition = Vector3.MoveTowards(hands.localPosition, handsPos + Vector3.up, 0.1f);
+            handsInfo.color = Color.gray;
+        }
+        else
+        {
+            hands.localPosition = Vector3.MoveTowards(hands.localPosition, handsPos, 1f);
+            handsInfo.color = new Color(0, 0, 0, 0);
+        }
+        if (v < 0)
+        {
+            feet.localPosition = Vector3.MoveTowards(feet.localPosition, feetPos + Vector3.down, 0.25f);
+            feetInfo.color = Color.gray;
+        }
+        else
+        {
+            feet.localPosition = Vector3.MoveTowards(feet.localPosition, feetPos, 1f);
+            feetInfo.color = new Color(0, 0, 0, 0);
         }
     }
 

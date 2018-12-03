@@ -52,13 +52,20 @@ public class Ragdoll2D : MonoBehaviour
 
     void Start()
     {
-        AddTorque(Random.Range(100f, 200f));
+        
     }
 
     bool grabbing = false;
     public bool down = false;
+
+    bool init = true;
     private void Update()
     {
+        if (init)
+        {
+            AddTorque(Random.Range(100f, 200f));
+            init = false;
+        }
         float pushForce = 20 * Mass;
         if (grabbing)
         {
@@ -66,13 +73,16 @@ public class Ragdoll2D : MonoBehaviour
             {
                 if (hand.attached)
                 {
-                    hand.RB2D.AddForce(Vector3.up * pushForce);
+                    if (!hand.IsSticked())
+                    {
+                        hand.RB2D.AddForce(Vector3.up * pushForce);
+                    }
                 }
             }
         }
         if (down)
         {
-
+            Vector3 feetCenter = Vector3.zero;
             int c = 0;
             foreach (Ragdoll2DPart foot in feet)
             {
@@ -81,9 +91,14 @@ public class Ragdoll2D : MonoBehaviour
                 {
                     ++c;
                     foot.RB2D.AddForce(Vector3.down * pushForce);
+                    feetCenter += foot.transform.position;
                 }
             }
-            center.RB2D.AddForce(Vector3.up * pushForce * c * 1.82f);
+            feetCenter = feetCenter / 2;
+            if (c > 0)
+            {
+                center.RB2D.AddForce((feetCenter+(Vector3.up*Vector3.Distance(feetCenter,center.transform.position))*pushForce*0.35f*c));
+            }
         }
     }
 

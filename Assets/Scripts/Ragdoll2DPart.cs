@@ -103,7 +103,10 @@ public class Ragdoll2DPart : MonoBehaviour
         stickPoint.enabled = false;
         stickPoint.connectedBody = null;
     }
-
+    public bool IsSticked()
+    {
+        return stickPoint.enabled;
+    }
     void Damaged(Vector2 relativeVelocity)
     {
         float dmg = relativeVelocity.magnitude * 0.3f;
