@@ -13,7 +13,7 @@ public enum ScoreType
 public class Ragdoll2D : MonoBehaviour
 {
 
-
+    [SerializeField] float pushFactor = 20;
     public Ragdoll2DPart head;
     public Ragdoll2DPart center;
     public List<Ragdoll2DPart> parts = new List<Ragdoll2DPart>();
@@ -80,7 +80,7 @@ public class Ragdoll2D : MonoBehaviour
             AddTorque(-Random.Range(100f, 200f));
             init = false;
         }
-        float pushForce = 20 * Mass;
+        float pushForce = pushFactor * Mass;
         if (grabbing)
         {
             foreach (Ragdoll2DPart hand in hands)

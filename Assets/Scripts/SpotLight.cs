@@ -6,8 +6,9 @@ public class SpotLight : MonoBehaviour {
 
 
     [SerializeField] Transform target;
-	// Use this for initialization
-	void Start () {
+    [SerializeField] float followDelay = 0.95f;
+    // Use this for initialization
+    void Start () {
 		
 	}
     float prevRot_z = 0;
@@ -24,7 +25,7 @@ public class SpotLight : MonoBehaviour {
             init = false;
             
         }
-        rot_z = 0.05f * rot_z + 0.95f * prevRot_z; 
+        rot_z = (1- followDelay) * rot_z + followDelay * prevRot_z; 
         prevRot_z = rot_z;
 
         transform.rotation = Quaternion.Euler(0f, 0f, rot_z );

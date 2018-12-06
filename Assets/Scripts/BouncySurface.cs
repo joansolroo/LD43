@@ -11,6 +11,8 @@ public class BouncySurface : MonoBehaviour
     [SerializeField] AudioSource sound;
 
     Vector3 scale;
+
+    [SerializeField] bool forceBack = false;
     private void Start()
     {
         scale = this.transform.localScale;
@@ -40,6 +42,12 @@ public class BouncySurface : MonoBehaviour
         {
             collision.rigidbody.AddForce(v * bounciness * collision.rigidbody.mass);
             Debug.DrawLine(collision.contacts[0].point, collision.contacts[0].point + v * 0.1f);
+        }
+        if (forceBack)
+        {
+            Vector2 inverseForce = -v;
+            //inverseForce.x = -v.x;
+            this.GetComponent<Rigidbody2D>().AddForce(inverseForce);
         }
         //StartCoroutine(BouncyAnimation(Mathf.Lerp(0.05f, 0.10f, speed*speed), Mathf.Lerp(1, 0.75f, speed * speed)));
         //Debug.LogError("qshk");
