@@ -26,7 +26,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1152023274774518
 GameObject:
   m_ObjectHideFlags: 1
@@ -102,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1535587741581598}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -97.2978, y: -67.789764, z: 0}
+  m_LocalPosition: {x: -96.4, y: -106.7, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4948765114422862}
@@ -198,7 +198,7 @@ Rigidbody2D:
   m_Mass: 2500
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: -0.03
+  m_GravityScale: -0.02
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -231,9 +231,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.62}
   serializedVersion: 2
-  m_Radius: 0.33
+  m_Radius: 1
 --- !u!61 &61361589370675406
 BoxCollider2D:
   m_ObjectHideFlags: 1
