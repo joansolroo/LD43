@@ -9,6 +9,7 @@ public class Public : MonoBehaviour {
     [SerializeField] float ExcitementDecay = 1;
     [SerializeField] AudioClip[] peopleSounds;
     [SerializeField] float maxDistance = -1;
+    [SerializeField] SpotLight[] lights;
     List<PublicMember> people = new List<PublicMember>();
     AudioSource source;
 
@@ -103,6 +104,5 @@ public class Public : MonoBehaviour {
             yield return new WaitForSeconds(clip.length-0.25f);
             laughing--;
         }
-        
     }
 }

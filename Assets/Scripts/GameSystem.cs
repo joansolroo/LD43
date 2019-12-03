@@ -96,7 +96,7 @@ public class GameSystem : MonoBehaviour {
         {
             
             SceneManager.LoadScene(scenes[i], incremental ? LoadSceneMode.Additive : LoadSceneMode.Single);
-            fader.FadeIn(1f);
+            fader.FadeIn(0.5f);
 
             yield return new WaitForSeconds(scenesTime[i]);
 
